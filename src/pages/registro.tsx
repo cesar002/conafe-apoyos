@@ -10,7 +10,6 @@ import { OpcionesGenerales } from "@/Models/OpcionesGenerales";
 import { EnvioDatos } from "@/Models/EnvioDatos";
 
 interface IRegistroPageProps {
-	opcionesGenerales: OpcionesGenerales | null;
 	opcionesCONAFE: OpcionesCONAFE | null;
 }
 
@@ -22,6 +21,12 @@ const Registro = (props: IRegistroPageProps) => {
 	const [ consultaFinalizada, setConsultaFinalizada ] = useState(false);
 	const [ datosUsuario, setDatosUsuario ] = useState<any>(null);
 	const [ procesoFinalizado, setProcesoFinalizado ] = useState(false);
+	const [ opcionesGenerales, setOpcionesGenerales ] = useState<OpcionesGenerales | null>(null);
+
+	const obtenerDatosGenerales = async () => {
+		const { data } = await axios.get('/api/datos-generales');
+		setOpcionesGenerales(data);
+	}
 
 	const buscarUsuario = () => {
 		clearTimeout(timeout);
@@ -52,6 +57,11 @@ const Registro = (props: IRegistroPageProps) => {
 			console.error(error)
 		}
 	}
+
+
+	useEffect(()=>{
+		obtenerDatosGenerales();
+	}, []);
 
 	useEffect(()=>{
 		if(!numeroControl)
@@ -248,7 +258,7 @@ const Registro = (props: IRegistroPageProps) => {
 											disabled={isSubmitting}
 										>
 											<option value="">Elige</option>
-											{ props.opcionesGenerales?.ESTADOS.map(estado =>
+											{  opcionesGenerales?.ESTADOS.map(estado =>
 											<option value={estado.VALUE} key={estado.VALUE}>{estado.TEXT}</option>
 											) }
 										</select>
@@ -486,7 +496,6 @@ export async function getServerSideProps() {
 			}
 		});
 
-		const { data: opcionesGenerales } = await Http.get<OpcionesGenerales>('/sitio_club/services/json_formulario.php');
 		const { data: opcionesCONAFE } = await Http.get<OpcionesCONAFE>('/apps/form_conafe_services/api_json_formulario.php', {
 			headers: {
 				Authorization: `Bearer ${loginCredenciales.ACCESTOKEN}`
@@ -495,14 +504,12 @@ export async function getServerSideProps() {
 
 		return {
 			props: {
-				opcionesGenerales: opcionesGenerales,
 				opcionesCONAFE,
 			}
 		}
 	} catch (error) {
 		return {
 			props: {
-				opcionesGenerales: null,
 				opcionesCONAFE: null,
 			}
 		}
