@@ -5,11 +5,11 @@ const ComoAplicoSeccion = () => {
 	return (
 		<div className="bg-con-primary min-h-[30rem] flex flex-col pb-20">
 			<div className="flex justify-center items-center">
-				<p className="text-con-blue lg:text-5xl text-4xl font-bold lg:w-[30%] w-full text-center">
+				<p className="text-con-blue lg:text-5xl text-4xl font-bold lg:w-[50%] w-full text-center">
 					¿Cómo aplico para el apoyo?
 				</p>
 			</div>
-			<div className="flex lg:flex-row flex-col justify-around lg:items-start items-center mt-16 gap-y-10">
+			<div className="flex lg:flex-row flex-col justify-around lg:items-center items-center mt-16 gap-y-10">
 				<div className="flex justify-center items-center flex-col lg:w-1/3 w-full">
 					<Image
 						src="/assets/04-Asset_12img.png"

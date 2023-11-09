@@ -23,18 +23,27 @@ const CaracteristicasSeccion = ({
 			<div className="lg:w-[60%] w-full flex flex-col justify-center items-start px-20 gap-y-10 mt-5 lg:mt-0">
 				<ul className="text-gray-400 lg:text-2xl text-xl font-semibold list-disc">
 					<li>
-						Disco duro: 226 GB, SSD o superior (disco de estado sólido, velocidades más rápidas, durabilidad, eficiencia energética que los HDD)
-					</li>
-					<li>
-						Procesador Intel Core i3 ó AMD Ryzen3 o similar
+						Pantalla: 14 pulgadas o superior
 					</li>
 					<li>
 						Memoria RAM: 8 GB
 					</li>
 					<li>
-						Fabricante reconocido como: HP, Lenovo, Huawei, Accer, Asus o similar
+						Disco duro de estado solido (SSD*): 226 GB
+					</li>
+					<li>
+						Procesador: Intel Core i3, AMD Ryzen3 o similar
+					</li>
+					<li>
+						Sistema operativo: Windows Home 64bits
+					</li>
+					<li>
+						Fabricante reconocido: HP, Lenovo, Huawei, Asus, Acer o similar
 					</li>
 				</ul>
+				<span className="text-sm text-gray-500">
+					*SSD tienen velocidades más rápidas, mayor durabilidad y eficiencia que los HDD
+				</span>
 				<button className="bg-con-red py-5 uppercase text-white lg:w-[40%] w-full rounded-full font-medium text-lg"
 					onClick={handleClick}
 				>

@@ -13,7 +13,7 @@ const Header = () => {
 				/>
 			</div>
 			<div className="w-3/4 flex justify-center items-center lg:px-10">
-				<p className="text-center lg:text-4xl text-2xl font-bold text-white">
+				<p className="text-center lg:text-5xl text-2xl font-bold text-white">
 					Apoyo Tecnólogico Para Educadores Comunitarios
 				</p>
 			</div>

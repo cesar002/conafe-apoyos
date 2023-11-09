@@ -21,7 +21,7 @@ const FortaleceSeccion = () => {
 					alt="Fortalece"
 					width={800}
 					height={100}
-					className="absolute lg:bottom-0 -bottom-[15rem] lg:-left-56 -left-16"
+					className="absolute xl:bottom-0 -bottom-[15rem] lg:-left-56 -left-16"
 				/>
 			</div>
 		</div>
