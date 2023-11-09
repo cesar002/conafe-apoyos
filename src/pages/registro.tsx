@@ -93,7 +93,7 @@ const Registro = (props: IRegistroPageProps) => {
 								TIPO_ESTUDIO: '',
 								INSTITUCION_ESTUDIO: '',
 								DISPOSITIVO_ACADEMICO: '',
-								OPCION_EQUIPO: '',
+								OPCION_EQUIPO: '1',
 								ACEPTO_CARACTERISTICAS: '',
 								NECESITA_CONTACTO: 'SI',
 								OPCION_PAGO: '',
