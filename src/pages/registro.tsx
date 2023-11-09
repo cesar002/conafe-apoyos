@@ -186,7 +186,7 @@ const Registro = (props: IRegistroPageProps) => {
 
 									<div className="mb-6">
 										<label htmlFor="apellido_paterno" className="block mb-2 text-sm font-medium text-gray-900">
-											Apellido Paterno<span className="text-red-600">*</span>
+											Apellido paterno<span className="text-red-600">*</span>
 										</label>
 										<input type="text" id="apellido_paterno" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required
 											value={values.PATERNO}
@@ -196,7 +196,7 @@ const Registro = (props: IRegistroPageProps) => {
 
 									<div className="mb-6">
 										<label htmlFor="apellido_materno" className="block mb-2 text-sm font-medium text-gray-900">
-											Apellido Materno <span className="text-red-600">*</span>
+											Apellido materno <span className="text-red-600">*</span>
 										</label>
 										<input type="text" id="apellido_materno" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required
 											value={values.MATERNO}
@@ -204,7 +204,7 @@ const Registro = (props: IRegistroPageProps) => {
 										/>
 									</div>
 
-									<div className="mb-6">
+									<div className="mb-6 hidden">
 										<label htmlFor="numero_conafe" className="block mb-2 text-sm font-medium text-gray-900">
 											Número de Control CONAFE <span className="text-red-600">*</span>
 										</label>
@@ -226,7 +226,7 @@ const Registro = (props: IRegistroPageProps) => {
 
 									<div className="mb-6">
 										<label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900">
-											Correo Electrónico <span className="text-red-600">*</span>
+											Correo electrónico <span className="text-red-600">*</span>
 										</label>
 										<input type="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required
 											name="EMAIL"
@@ -239,7 +239,7 @@ const Registro = (props: IRegistroPageProps) => {
 
 									<div className="mb-6">
 										<label htmlFor="numero_celular" className="block mb-2 text-sm font-medium text-gray-900">
-											Número Celular a diez dígitos <span className="text-red-600">*</span>
+											Número celular a diez dígitos <span className="text-red-600">*</span>
 										</label>
 										<input type="text" id="numero_celular" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required
 											name="MOVIL"
@@ -284,7 +284,7 @@ const Registro = (props: IRegistroPageProps) => {
 
 									<div className="mb-6">
 										<label htmlFor="tipo_figuras" className="block mb-2 text-sm font-medium text-gray-900">
-											Tipo de Figura <span className="text-red-600">*</span>
+											Tipo de figura <span className="text-red-600">*</span>
 										</label>
 										<select id="tipo_figuras" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
 											required
@@ -302,7 +302,7 @@ const Registro = (props: IRegistroPageProps) => {
 
 									<div className="mb-6">
 										<label htmlFor="estudias" className="block mb-2 text-sm font-medium text-gray-900">
-											Estudias Actualmente <span className="text-red-600">*</span>
+											Estudias actualmente <span className="text-red-600">*</span>
 										</label>
 										<select id="estudias" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
 											required
@@ -375,7 +375,7 @@ const Registro = (props: IRegistroPageProps) => {
 											El equipo que ofrece este programa considera los requerimientos generales para entornos educativos y profesionales, se trata de fabricante reconocidos por su calidad (HP, Lenovo, Huawei, Asus, Acer u otro), durabilidad y ciclo de vida. Cuentan con 1 año de garantía y soporte con el fabricante.
 										</p>
 
-										<select id="opcion_de_equipo" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+										<select id="opcion_de_equipo" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 hidden"
 											required
 											name="OPCION_EQUIPO"
 											value={values.OPCION_EQUIPO}
@@ -388,12 +388,16 @@ const Registro = (props: IRegistroPageProps) => {
 											) }
 										</select>
 
+										<p className="text-sm">
+											{ props.opcionesCONAFE?.OPCION_EQUIPO[1].TEXT }
+										</p>
+
 										<p className="text-sm mt-3">
 											Los equipos incluyen acceso a las herramientas de productividad, comunicación y colaboración de Google Workspace for Education en el dominio educativo @conafe.nuevaescuela.mx y capacitación en línea para certificarse Google Educator Nivel 1.
 										</p>
 									</div>
 
-									<div className="mb-6">
+									{/* <div className="mb-6 hidden">
 										<label className="block mb-2 text-sm font-medium text-gray-900">
 											Acepto las carácterísticas <span className="text-red-600">*</span>
 										</label>
@@ -423,33 +427,34 @@ const Registro = (props: IRegistroPageProps) => {
 												No
 											</label>
 										</div>
-									</div>
+									</div> */}
 
 									<div className="mb-6">
-										<p className="text-gray-600">
-											Estoy informado y acepto las características del equipo.
-										</p>
 										{/* <ul className="list-disc text-gray-500 text-base ml-5 mt-3 mb-3">
 											<li>Curso para la certificación como Educador Google Nivel 1</li>
 											<li>Simulador para la certificación como Educador Google Nivel 1</li>
 											<li>Cupón para presentar el examen de certificación como Educador Google Nivel 1</li>
 										</ul> */}
 										<div className="flex items-center mb-4">
-											<input id="opcion_1_1" type="radio" name="estoy_informado" value="Estoy informado" className="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked
-												disabled
+											<input id="opcion_1_1" type="checkbox" name="ACEPTO_CARACTERISTICAS" value="1" className="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300"
+												required
+												checked={ values.ACEPTO_CARACTERISTICAS == "1" }
+												onChange={handleChange}
+												onBlur={handleBlur}
+												disabled={isSubmitting}
 											/>
 											<label htmlFor="opcion_1_1" className="block ml-2 text-base text-gray-900">
-												Estoy informado
+												Estoy informado y acepto las características del equipo.
 											</label>
 										</div>
 									</div>
 
 									<div className="mb-6">
 										<p className="text-gray-700 mb-2">
-											Entiendo que el equipo será entregado en la Coordinación Operativa Estatal después de completar el pago total del mismo.
+											Entiendo que el equipo será entregado en la Coordinación Operativa Estatal después de completar el pago total del mismo. A partir de febrero 2024
 										</p>
 										<p className="text-gray-700 mb-2">
-											El equipo tiene un costo de $8,500.00 mxn. Cómo parte de este Apoyo Tecnológico para Educadores Comunitarios, CONAFE aportará $4,250.00 mxn, la diferencia será completada por mi en el siguiente plazo:
+											El equipo tiene un costo de $8,900.00 mxn. Cómo parte de este Apoyo Tecnológico para Educadores Comunitarios, CONAFE aportará $4,450.00 mxn, la diferencia será completada por mi en el siguiente plazo:
 										</p>
 										<select className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
 											required
