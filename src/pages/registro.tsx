@@ -72,7 +72,11 @@ const Registro = (props: IRegistroPageProps) => {
 
 	return (
 		<div className="bg-con-primary min-h-screen w-full">
-			<div className="bg-[url('/assets/01-Asset_3formulario.png')] bg-cover bg-no-repeat lg:min-h-[28rem] min-h-[20rem] w-full" />
+			<div className="bg-[url('/assets/01-Asset_3formulario.png')] bg-cover bg-no-repeat lg:min-h-[28rem] min-h-[23rem] w-full flex justify-center lg:items-start items-center">
+				<span className="text-white lg:text-4xl text-2xl font-bold lg:mt-32 mt-10 text-center">
+					Apoyo tecnólogico para Educadores Comunitarios
+				</span>
+			</div>
 			<div className="lg:px-32 lg:py-28 px-5 lg:mt-0 ">
 				<div className="flex justify-center items-center">
 					{ procesoFinalizado &&
@@ -365,10 +369,10 @@ const Registro = (props: IRegistroPageProps) => {
 
 									<div className="mb-6 text-gray-600">
 										<p>
-											Equipos de Cómputo incluídos en el Programa
+											Equipo de Cómputo incluídos en el Programa
 										</p>
 										<p className="text-sm mb-3">
-											El equipo que ofrece este programa consideran los requerimientos generales para entornos educativos y profesionales, se trata de marcas reconocidas por su calidad (HP, Lenovo o Asus), durabilidad, ciclo de vida. Cuentan con 1 año de garantía y soporte con el fabricante.
+											El equipo que ofrece este programa considera los requerimientos generales para entornos educativos y profesionales, se trata de fabricante reconocidos por su calidad (HP, Lenovo, Huawei, Asus, Acer u otro), durabilidad y ciclo de vida. Cuentan con 1 año de garantía y soporte con el fabricante.
 										</p>
 
 										<select id="opcion_de_equipo" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
@@ -377,7 +381,7 @@ const Registro = (props: IRegistroPageProps) => {
 											value={values.OPCION_EQUIPO}
 											onChange={handleChange}
 											onBlur={handleBlur}
-											disabled={isSubmitting}
+											disabled
 										>
 											{ props.opcionesCONAFE?.OPCION_EQUIPO.map(op =>
 											<option value={op.VALUE} key={op.VALUE}>{op.TEXT}</option>
@@ -385,7 +389,7 @@ const Registro = (props: IRegistroPageProps) => {
 										</select>
 
 										<p className="text-sm mt-3">
-											Los equipos incluyen acceso a las herramientas de productividad, comunicación y colaboración de Google Workspace for Education a través de una cuenta en el dominio educativo  @conafe.nuevaescuela.mx
+											Los equipos incluyen acceso a las herramientas de productividad, comunicación y colaboración de Google Workspace for Education en el dominio educativo @conafe.nuevaescuela.mx y capacitación en línea para certificarse Google Educator Nivel 1.
 										</p>
 									</div>
 
@@ -423,13 +427,13 @@ const Registro = (props: IRegistroPageProps) => {
 
 									<div className="mb-6">
 										<p className="text-gray-600">
-											Me han informado que mi equipo incluye:
+											Estoy informado y acepto las características del equipo.
 										</p>
-										<ul className="list-disc text-gray-500 text-base ml-5 mt-3 mb-3">
+										{/* <ul className="list-disc text-gray-500 text-base ml-5 mt-3 mb-3">
 											<li>Curso para la certificación como Educador Google Nivel 1</li>
 											<li>Simulador para la certificación como Educador Google Nivel 1</li>
 											<li>Cupón para presentar el examen de certificación como Educador Google Nivel 1</li>
-										</ul>
+										</ul> */}
 										<div className="flex items-center mb-4">
 											<input id="opcion_1_1" type="radio" name="estoy_informado" value="Estoy informado" className="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked
 												disabled
@@ -442,13 +446,10 @@ const Registro = (props: IRegistroPageProps) => {
 
 									<div className="mb-6">
 										<p className="text-gray-700 mb-2">
-											Entiendo que el equipo me será entregado después de completar el costo total del mismo.
+											Entiendo que el equipo será entregado en la Coordinación Operativa Estatal después de completar el pago total del mismo.
 										</p>
 										<p className="text-gray-700 mb-2">
-											CONAFE aportará $4,500.
-										</p>
-										<p className="text-gray-700 mb-2">
-											La diferencia será completada por mi en el siguiente plazo <span className="text-red-600">*</span>
+											El equipo tiene un costo de $8,500.00 mxn. Cómo parte de este Apoyo Tecnológico para Educadores Comunitarios, CONAFE aportará $4,250.00 mxn, la diferencia será completada por mi en el siguiente plazo:
 										</p>
 										<select className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
 											required
