@@ -5,6 +5,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
 			<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.css" rel="stylesheet" />
+			<link rel="icon" href="/assets/1Asset_18favicon.png" />
 		</Head>
       <body>
         <Main />
