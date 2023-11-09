@@ -9,7 +9,7 @@ const ComoAplicoSeccion = ({
 }: IComoAplicoSeccionProps) => {
 
 	return (
-		<div className="bg-con-primary min-h-[30rem] flex flex-col pb-20">
+		<div className="bg-con-primary min-h-[30rem] flex flex-col pb-20 lg:px-0 px-5">
 			<div className="flex justify-center items-center">
 				<p className="text-con-blue lg:text-5xl text-4xl font-bold lg:w-[50%] w-full text-center">
 					¿Cómo aplico para el apoyo?

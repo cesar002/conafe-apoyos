@@ -3,7 +3,7 @@ import Image from "next/image";
 const FortaleceSeccion = () => {
 
 	return (
-		<div className="bg-con-blue lg:min-h-[25rem] min-h-[40rem] flex lg:flex-row flex-col w-full lg:py-0 py-10 px-5 lg:px-0">
+		<div className="bg-con-blue lg:min-h-[25rem] min-h-[32rem] flex lg:flex-row flex-col w-full lg:py-0 py-10 px-5 lg:px-0">
 			<div className="lg:w-[60%] w-full flex flex-col justify-center items-center gap-y-10">
 				<p className="lg:text-5xl text-4xl text-con-yellow drop-shadow-md font-semibold text-center lg:text-left">
 					Fortalece tu formación

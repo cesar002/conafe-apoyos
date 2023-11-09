@@ -33,7 +33,7 @@ const PuedoSerCandidatoSeccion = ({
 				</div>
 				<div className="flex w-full">
 					<div className="lg:w-[15%]" />
-					<div className="lg:w-[85%] w-full flex lg:flex-row flex-col gap-x-10">
+					<div className="lg:w-[85%] w-full flex lg:flex-row flex-col lg:items-start items-center gap-y-5 gap-x-10">
 						<span className="text-con-green lg:text-8xl text-7xl font-bold">
 							2
 						</span>
@@ -50,7 +50,7 @@ const PuedoSerCandidatoSeccion = ({
 						<span className="text-con-green lg:text-8xl text-7xl font-bold">
 							3
 						</span>
-						<div className="bg-con-green h-24 py-3 lg:py-0 flex items-center text-white lg:w-[40%] w-full px-5 gap-x-2">
+						<div className="bg-con-green lg:h-24 h-36 py-3 lg:py-0 flex items-center text-white lg:w-[40%] w-full px-5 gap-x-2">
 							<span className="lg:text-6xl text-5xl font-semibold">
 								EC
 							</span>

@@ -9,7 +9,7 @@ const CaracteristicasSeccion = ({
 }: ICaracteristicasSeccionProps) => {
 
 	return (
-		<div className="bg-con-primary min-h-[30rem] flex lg:flex-row flex-col">
+		<div className="bg-con-primary min-h-[30rem] flex lg:flex-row flex-col lg:py-0 py-10">
 			<div className="lg:w-[40%] w-full flex lg:justify-end justify-center items-center">
 				<div className="w-1/2 lg:w-auto">
 					<Image
