@@ -22,8 +22,8 @@ const Home = () => {
 			<FavoreceSeccion />
 			<FortaleceSeccion />
 			<ApoyoTecnologicoSeccion />
-			<CaracteristicasSeccion handleClick={irAlRegistro} />
-			<ComoAplicoSeccion />
+			<CaracteristicasSeccion />
+			<ComoAplicoSeccion handleClick={irAlRegistro} />
 			<PuedoSerCandidatoSeccion handleClick={irAlRegistro} />
 			<GoogleSeccion handleClick={irAlRegistro} />
 		</div>

@@ -44,11 +44,6 @@ const CaracteristicasSeccion = ({
 				<span className="text-sm text-gray-500">
 					*SSD tienen velocidades más rápidas, mayor durabilidad y eficiencia que los HDD
 				</span>
-				<button className="bg-con-red py-5 uppercase text-white lg:w-[40%] w-full rounded-full font-medium text-lg"
-					onClick={handleClick}
-				>
-					Regístrate aquí
-				</button>
 			</div>
 		</div>
 	)

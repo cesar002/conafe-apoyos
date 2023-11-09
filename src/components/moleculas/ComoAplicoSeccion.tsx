@@ -1,6 +1,12 @@
 import Image from "next/image";
 
-const ComoAplicoSeccion = () => {
+interface IComoAplicoSeccionProps {
+	handleClick?(): void;
+}
+
+const ComoAplicoSeccion = ({
+	handleClick
+}: IComoAplicoSeccionProps) => {
 
 	return (
 		<div className="bg-con-primary min-h-[30rem] flex flex-col pb-20">
@@ -43,6 +49,13 @@ const ComoAplicoSeccion = () => {
 						<strong>Permanece en la práctica educativa</strong> durante el ciclo escolar 2023 - 2024
 					</p>
 				</div>
+			</div>
+			<div className="flex justify-center items-center mt-14">
+				<button className="bg-con-red py-5 uppercase text-white lg:w-[20%] w-full rounded-full font-medium text-lg"
+					onClick={handleClick}
+				>
+					Regístrate aquí
+				</button>
 			</div>
 		</div>
 	)
