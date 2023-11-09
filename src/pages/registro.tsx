@@ -168,7 +168,7 @@ const Registro = (props: IRegistroPageProps) => {
 								{ consultaFinalizada && datosUsuario && datosUsuario.FIGURA_VALIDA == 'N' &&
 								<div className="flex justify-center items-center mt-10">
 									<p className="text-2xl text-gray-500">
-										{ datosUsuario.MENSAJE_VALIDACION }
+										¡No se encontró la figura!
 									</p>
 								</div>
 								}
