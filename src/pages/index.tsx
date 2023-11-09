@@ -1,3 +1,5 @@
+import { useRouter } from "next/router";
+
 import ApoyoTecnologicoSeccion from "@/components/moleculas/ApoyoTecnologicoSeccion";
 import CaracteristicasSeccion from "@/components/moleculas/CaracteristicasSeccion";
 import ComoAplicoSeccion from "@/components/moleculas/ComoAplicoSeccion";
@@ -8,6 +10,11 @@ import Header from "@/components/moleculas/Header";
 import PuedoSerCandidatoSeccion from "@/components/moleculas/PuedoSerCandidatoSeccion";
 
 const Home = () => {
+	const router = useRouter();
+
+	const irAlRegistro = () => {
+		router.push('registro');
+	}
 
 	return (
 		<div className="min-h-screen bg-[#e4f1e7]">
@@ -15,10 +22,10 @@ const Home = () => {
 			<FavoreceSeccion />
 			<FortaleceSeccion />
 			<ApoyoTecnologicoSeccion />
-			<CaracteristicasSeccion />
+			<CaracteristicasSeccion handleClick={irAlRegistro} />
 			<ComoAplicoSeccion />
-			<PuedoSerCandidatoSeccion />
-			<GoogleSeccion />
+			<PuedoSerCandidatoSeccion handleClick={irAlRegistro} />
+			<GoogleSeccion handleClick={irAlRegistro} />
 		</div>
 	);
 }

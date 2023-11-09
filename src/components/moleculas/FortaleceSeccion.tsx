@@ -12,7 +12,7 @@ const FortaleceSeccion = () => {
 					Queremos promover el seguimiento, la observación y la präctica de la <strong>Relación tutora a distancia y en līnea.</strong>
 				</p>
 				<p className="text-white lg:text-2xl text-xl font-semibold text-center lg:text-left lg:w-[70%]">
-					Fortalecer la präctica pedagógica por medio de favorecer el <strong>acceso a información y textos</strong>
+					Fortalecer la práctica pedagógica por medio de favorecer el <strong>acceso a información y textos.</strong>
 				</p>
 			</div>
 			<div className="lg:w-[40%] w-full flex justify-center items-center relative">

@@ -1,6 +1,12 @@
 import Image from "next/image";
 
-const CaracteristicasSeccion = () => {
+interface ICaracteristicasSeccionProps {
+	handleClick?(): void;
+}
+
+const CaracteristicasSeccion = ({
+	handleClick
+}: ICaracteristicasSeccionProps) => {
 
 	return (
 		<div className="bg-con-primary min-h-[30rem] flex lg:flex-row flex-col">
@@ -29,8 +35,10 @@ const CaracteristicasSeccion = () => {
 						La marca puede variar
 					</li>
 				</ul>
-				<button className="bg-con-red py-5 uppercase text-white lg:w-[40%] w-full rounded-full font-medium text-lg">
-					Registrate aqui
+				<button className="bg-con-red py-5 uppercase text-white lg:w-[40%] w-full rounded-full font-medium text-lg"
+					onClick={handleClick}
+				>
+					Regístrate aquí
 				</button>
 			</div>
 		</div>
