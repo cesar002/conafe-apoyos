@@ -8,6 +8,8 @@ import { LoginDatos } from "@/Models/LoginDatos";
 import { OpcionesCONAFE } from "@/Models/OpcionesCONAFE";
 import { OpcionesGenerales } from "@/Models/OpcionesGenerales";
 import { EnvioDatos } from "@/Models/EnvioDatos";
+import Loading from "@/components/moleculas/Loading";
+import Link from "next/link";
 
 interface IRegistroPageProps {
 	opcionesCONAFE: OpcionesCONAFE | null;
@@ -22,6 +24,7 @@ const Registro = (props: IRegistroPageProps) => {
 	const [ datosUsuario, setDatosUsuario ] = useState<any>(null);
 	const [ procesoFinalizado, setProcesoFinalizado ] = useState(false);
 	const [ opcionesGenerales, setOpcionesGenerales ] = useState<OpcionesGenerales | null>(null);
+	const [ enviandoDatos, setEnviandoDatos ] = useState(false);
 
 	const obtenerDatosGenerales = async () => {
 		const { data } = await axios.get('/api/datos-generales');
@@ -48,13 +51,22 @@ const Registro = (props: IRegistroPageProps) => {
 	}
 
 	const enviarInformacion = async (values: EnvioDatos, helpers: FormikHelpers<EnvioDatos>) => {
+		const datos: EnvioDatos = {
+			...values,
+			INSTITUCION_ESTUDIO: values.ESTUDIAS_ACTUALMENTE == 'SI' ? values.INSTITUCION_ESTUDIO : '',
+			TIPO_ESTUDIO: values.ESTUDIAS_ACTUALMENTE == 'SI' ? values.TIPO_ESTUDIO : '',
+			DISPOSITIVO_ACADEMICO: values.UTILIZAS_EQUIPO_COMPUTO == 'SI' ? values.DISPOSITIVO_ACADEMICO : '',
+		}
 		try {
-			const { data } = await axios.post<any>('/api/enviar-datos', values);
+			setEnviandoDatos(true);
+			const { data } = await axios.post<any>('/api/enviar-datos', datos);
 			if(data.MENSAJE_API == "REGISTRO GENERADO"){
 				setProcesoFinalizado(true);
 			}
 		} catch (error: any) {
 			console.error(error)
+		}finally{
+			setEnviandoDatos(false);
 		}
 	}
 
@@ -87,6 +99,14 @@ const Registro = (props: IRegistroPageProps) => {
 						<p className="text-gray-700 font-semibold text-center lg:text-3xl text-lg">
 							Tus respuestas han sido registradas, pronte te contactaremos con más detalles del avance de tu aplicación
 						</p>
+						<div className="flex justify-center items-center">
+							<Link
+								href="/"
+								className="text-xl text-gray-500 hover:text-gray-800"
+							>
+								Regresar
+							</Link>
+						</div>
 					</div>
 					}
 					{ !procesoFinalizado &&
@@ -109,6 +129,7 @@ const Registro = (props: IRegistroPageProps) => {
 								DISPOSITIVO_ACADEMICO: '',
 								OPCION_EQUIPO: '1',
 								ACEPTO_CARACTERISTICAS: false,
+								UTILIZAS_EQUIPO_COMPUTO: '',
 								NECESITA_CONTACTO: 'SI',
 								OPCION_PAGO: '',
 							}}
@@ -128,9 +149,19 @@ const Registro = (props: IRegistroPageProps) => {
 								FECHA_INGRESO: Yup.string().required('Campo requerido'),
 								TIPO_FIGURA: Yup.string().required('Campo requerido'),
 								ESTUDIAS_ACTUALMENTE: Yup.string().required('Campo requerido'),
-								TIPO_ESTUDIO: Yup.string().required('Campo requerido'),
-								INSTITUCION_ESTUDIO: Yup.string().required('Campo requerido'),
-								DISPOSITIVO_ACADEMICO: Yup.string().required('Campo requerido'),
+								TIPO_ESTUDIO: Yup.string().when('ESTUDIAS_ACTUALMENTE', {
+									is: 'SI',
+									then: Yup.string().required('Campo requerido')
+								}),
+								INSTITUCION_ESTUDIO: Yup.string().when('ESTUDIAS_ACTUALMENTE', {
+									is: 'SI',
+									then: Yup.string().required('Campo requerido'),
+								}),
+								UTILIZAS_EQUIPO_COMPUTO: Yup.string().oneOf(['SI', 'NO'], 'Opción invalida').required('Campo requerido'),
+								DISPOSITIVO_ACADEMICO: Yup.string().when('UTILIZAS_EQUIPO_COMPUTO', {
+									is: 'SI',
+									then: Yup.string().required('Campo requerido')
+								}),
 								OPCION_EQUIPO: Yup.string().required('Campo requerido'),
 								ACEPTO_CARACTERISTICAS: Yup.boolean().oneOf([true], 'Debes aceptar las características del equipo').required('Campo requerido'),
 								OPCION_PAGO: Yup.string().required('Campo requerido'),
@@ -378,9 +409,11 @@ const Registro = (props: IRegistroPageProps) => {
 										}
 									</div>
 
+									{ values.ESTUDIAS_ACTUALMENTE == "SI" &&
+									<>
 									<div className="mb-6">
 										<label htmlFor="tipo_estudio" className="block mb-2 text-sm font-medium text-gray-900">
-											En el caso de que estés estudiando qué nivel estás cursando en este ciclo (2023-2024)  <span className="text-red-600">*</span>
+											¿qué nivel estás cursando en este ciclo (2023-2024)?  <span className="text-red-600">*</span>
 										</label>
 										<select id="tipo_estudio" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
 											required
@@ -400,7 +433,6 @@ const Registro = (props: IRegistroPageProps) => {
 										</span>
 										}
 									</div>
-
 									<div className="mb-6">
 										<label htmlFor="nombre_institucion" className="block mb-2 text-sm font-medium text-gray-900">
 											¿Cuál es el nombre de la Institución donde estudias?  <span className="text-red-600">*</span>
@@ -418,10 +450,37 @@ const Registro = (props: IRegistroPageProps) => {
 										</span>
 										}
 									</div>
+									</>
+									}
+
 
 									<div className="mb-6">
+										<label htmlFor="usas_dispositivos" className="block mb-2 text-sm font-medium text-gray-900">
+											Para tus actividades academicas ¿utilizas algún dispositivo electronico? <span className="text-red-600">*</span>
+										</label>
+										<select className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+											name="UTILIZAS_EQUIPO_COMPUTO"
+											value={values.UTILIZAS_EQUIPO_COMPUTO}
+											onChange={handleChange}
+											onBlur={handleBlur}
+											disabled={isSubmitting}
+											id="usas_dispositivos"
+										>
+											<option value="">Elige</option>
+											<option value="SI">Sí</option>
+											<option value="NO">No</option>
+										</select>
+										{ errors.UTILIZAS_EQUIPO_COMPUTO && touched.UTILIZAS_EQUIPO_COMPUTO &&
+										<span className="text-red-600 text-sm ml-2">
+											{ errors.UTILIZAS_EQUIPO_COMPUTO }
+										</span>
+										}
+									</div>
+
+									{ values.UTILIZAS_EQUIPO_COMPUTO == 'SI' &&
+									<div className="mb-6">
 										<label htmlFor="dispositivo_usas" className="block mb-2 text-sm font-medium text-gray-900">
-											Para realizar tus actividades académicas ¿que tipo de dispositivo utilizas actualmente?  <span className="text-red-600">*</span>
+											¿Que dispositivo utilizas mas para tus actividades academicas? <span className="text-red-600">*</span>
 										</label>
 										<select id="dispositivo_usas" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
 											required
@@ -441,6 +500,7 @@ const Registro = (props: IRegistroPageProps) => {
 										</span>
 										}
 									</div>
+									}
 
 									<div className="mb-6 text-gray-600">
 										<p>
@@ -573,6 +633,7 @@ const Registro = (props: IRegistroPageProps) => {
 					}
 				</div>
 			</div>
+			<Loading visible={enviandoDatos} />
 		</div>
 	);
 }
