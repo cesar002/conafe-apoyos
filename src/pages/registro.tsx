@@ -108,7 +108,7 @@ const Registro = (props: IRegistroPageProps) => {
 								INSTITUCION_ESTUDIO: '',
 								DISPOSITIVO_ACADEMICO: '',
 								OPCION_EQUIPO: '1',
-								ACEPTO_CARACTERISTICAS: '',
+								ACEPTO_CARACTERISTICAS: false,
 								NECESITA_CONTACTO: 'SI',
 								OPCION_PAGO: '',
 							}}
@@ -120,7 +120,11 @@ const Registro = (props: IRegistroPageProps) => {
 								ESTADO: Yup.string().required('Campo requerido'),
 								NUMERO_CONTROL: Yup.string().required('Campo requerido'),
 								EMAIL: Yup.string().required('Campo requerido').email('El campo debe ser un Email'),
-								MOVIL: Yup.string().required('Campo requerido'),
+								MOVIL: Yup.string()
+											.matches(/^[1-9]\d*$/, 'El campo debe ser un número de telefono')
+											.min(10, 'El campo debe ser de 10 dígitos')
+											.max(10, 'El campo debe ser de 10 dígitos')
+											.required('Campo requerido'),
 								FECHA_INGRESO: Yup.string().required('Campo requerido'),
 								TIPO_FIGURA: Yup.string().required('Campo requerido'),
 								ESTUDIAS_ACTUALMENTE: Yup.string().required('Campo requerido'),
@@ -128,7 +132,7 @@ const Registro = (props: IRegistroPageProps) => {
 								INSTITUCION_ESTUDIO: Yup.string().required('Campo requerido'),
 								DISPOSITIVO_ACADEMICO: Yup.string().required('Campo requerido'),
 								OPCION_EQUIPO: Yup.string().required('Campo requerido'),
-								ACEPTO_CARACTERISTICAS: Yup.string().required('Campo requerido'),
+								ACEPTO_CARACTERISTICAS: Yup.boolean().oneOf([true], 'Debes aceptar las características del equipo').required('Campo requerido'),
 								OPCION_PAGO: Yup.string().required('Campo requerido'),
 							}) }
 							onSubmit={enviarInformacion}
@@ -182,6 +186,11 @@ const Registro = (props: IRegistroPageProps) => {
 											value={values.NOMBRE}
 											disabled
 										/>
+										{ errors.NOMBRE && touched.NOMBRE &&
+										<span className="text-red-600 text-sm ml-2">
+											{ errors.NOMBRE }
+										</span>
+										}
 									</div>
 
 									<div className="mb-6">
@@ -192,6 +201,11 @@ const Registro = (props: IRegistroPageProps) => {
 											value={values.PATERNO}
 											disabled
 										/>
+										{ errors.PATERNO && touched.PATERNO &&
+										<span className="text-red-600 text-sm ml-2">
+											{ errors.PATERNO }
+										</span>
+										}
 									</div>
 
 									<div className="mb-6">
@@ -202,6 +216,11 @@ const Registro = (props: IRegistroPageProps) => {
 											value={values.MATERNO}
 											disabled
 										/>
+										{ errors.MATERNO && touched.MATERNO &&
+										<span className="text-red-600 text-sm ml-2">
+											{ errors.MATERNO }
+										</span>
+										}
 									</div>
 
 									<div className="mb-6 hidden">
@@ -212,6 +231,11 @@ const Registro = (props: IRegistroPageProps) => {
 											value={values.NUMERO_CONTROL}
 											disabled
 										/>
+										{ errors.NUMERO_CONTROL && touched.NUMERO_CONTROL &&
+										<span className="text-red-600 text-sm ml-2">
+											{ errors.NUMERO_CONTROL }
+										</span>
+										}
 									</div>
 
 									<div className="mb-6">
@@ -222,6 +246,11 @@ const Registro = (props: IRegistroPageProps) => {
 											value={values.CURP}
 											disabled
 										/>
+										{ errors.CURP && touched.CURP &&
+										<span className="text-red-600 text-sm ml-2">
+											{ errors.CURP }
+										</span>
+										}
 									</div>
 
 									<div className="mb-6">
@@ -235,6 +264,11 @@ const Registro = (props: IRegistroPageProps) => {
 											onBlur={handleBlur}
 											disabled={isSubmitting}
 										/>
+										{ errors.EMAIL && touched.EMAIL &&
+										<span className="text-red-600 text-sm ml-2">
+											{ errors.EMAIL }
+										</span>
+										}
 									</div>
 
 									<div className="mb-6">
@@ -247,7 +281,13 @@ const Registro = (props: IRegistroPageProps) => {
 											onChange={handleChange}
 											onBlur={handleBlur}
 											disabled={isSubmitting}
+											maxLength={10}
 										/>
+										{ errors.MOVIL && touched.MOVIL &&
+										<span className="text-red-600 text-sm ml-2">
+											{ errors.MOVIL }
+										</span>
+										}
 									</div>
 
 									<div className="mb-6">
@@ -266,6 +306,11 @@ const Registro = (props: IRegistroPageProps) => {
 											<option value={estado.VALUE} key={estado.VALUE}>{estado.TEXT}</option>
 											) }
 										</select>
+										{ errors.ESTADO && touched.ESTADO &&
+										<span className="text-red-600 text-sm ml-2">
+											{ errors.ESTADO }
+										</span>
+										}
 									</div>
 
 									<div className="mb-6">
@@ -280,6 +325,11 @@ const Registro = (props: IRegistroPageProps) => {
 											onBlur={handleBlur}
 											disabled={isSubmitting}
 										/>
+										{ errors.FECHA_INGRESO && touched.FECHA_INGRESO &&
+										<span className="text-red-600 text-sm ml-2">
+											{ errors.FECHA_INGRESO }
+										</span>
+										}
 									</div>
 
 									<div className="mb-6">
@@ -298,6 +348,11 @@ const Registro = (props: IRegistroPageProps) => {
 											<option value={tipo.VALUE} key={tipo.VALUE}>{tipo.TEXT}</option>
 											) }
 										</select>
+										{ errors.TIPO_FIGURA && touched.TIPO_FIGURA &&
+										<span className="text-red-600 text-sm ml-2">
+											{ errors.TIPO_FIGURA }
+										</span>
+										}
 									</div>
 
 									<div className="mb-6">
@@ -316,6 +371,11 @@ const Registro = (props: IRegistroPageProps) => {
 											<option value="SI">Sí</option>
 											<option value="NO">No</option>
 										</select>
+										{ errors.ESTUDIAS_ACTUALMENTE && touched.ESTUDIAS_ACTUALMENTE &&
+										<span className="text-red-600 text-sm ml-2">
+											{ errors.ESTUDIAS_ACTUALMENTE }
+										</span>
+										}
 									</div>
 
 									<div className="mb-6">
@@ -334,6 +394,11 @@ const Registro = (props: IRegistroPageProps) => {
 											<option value={tipo.VALUE} key={tipo.VALUE}>{tipo.TEXT}</option>
 											) }
 										</select>
+										{ errors.TIPO_ESTUDIO && touched.TIPO_ESTUDIO &&
+										<span className="text-red-600 text-sm ml-2">
+											{ errors.TIPO_ESTUDIO }
+										</span>
+										}
 									</div>
 
 									<div className="mb-6">
@@ -347,6 +412,11 @@ const Registro = (props: IRegistroPageProps) => {
 											onBlur={handleBlur}
 											disabled={isSubmitting}
 										/>
+										{ errors.INSTITUCION_ESTUDIO && touched.INSTITUCION_ESTUDIO &&
+										<span className="text-red-600 text-sm ml-2">
+											{ errors.INSTITUCION_ESTUDIO }
+										</span>
+										}
 									</div>
 
 									<div className="mb-6">
@@ -365,6 +435,11 @@ const Registro = (props: IRegistroPageProps) => {
 											<option value={dis.VALUE} key={dis.VALUE}>{dis.TEXT}</option>
 											) }
 										</select>
+										{ errors.DISPOSITIVO_ACADEMICO && touched.DISPOSITIVO_ACADEMICO &&
+										<span className="text-red-600 text-sm ml-2">
+											{ errors.DISPOSITIVO_ACADEMICO }
+										</span>
+										}
 									</div>
 
 									<div className="mb-6 text-gray-600">
@@ -438,7 +513,7 @@ const Registro = (props: IRegistroPageProps) => {
 										<div className="flex items-center mb-4">
 											<input id="opcion_1_1" type="checkbox" name="ACEPTO_CARACTERISTICAS" value="1" className="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300"
 												required
-												checked={ values.ACEPTO_CARACTERISTICAS == "1" }
+												checked={ values.ACEPTO_CARACTERISTICAS }
 												onChange={handleChange}
 												onBlur={handleBlur}
 												disabled={isSubmitting}
@@ -447,11 +522,16 @@ const Registro = (props: IRegistroPageProps) => {
 												Estoy informado y acepto las características del equipo.
 											</label>
 										</div>
+										{ errors.ACEPTO_CARACTERISTICAS && touched.ACEPTO_CARACTERISTICAS &&
+											<span className="text-red-600 text-sm ml-2">
+												{ errors.ACEPTO_CARACTERISTICAS }
+											</span>
+										}
 									</div>
 
 									<div className="mb-6">
 										<p className="text-gray-700 mb-2">
-											Entiendo que el equipo será entregado en la Coordinación Operativa Estatal después de completar el pago total del mismo. A partir de febrero 2024
+											Entiendo que el equipo será entregado en la Coordinación Territorial en lugar de Coordinación Operativa Estatal después de completar el pago total del mismo. A partir de febrero 2024
 										</p>
 										<p className="text-gray-700 mb-2">
 											El equipo tiene un costo de $8,900.00 mxn. Cómo parte de este Apoyo Tecnológico para Educadores Comunitarios, CONAFE aportará $4,450.00 mxn, la diferencia será completada por mi en el siguiente plazo:
@@ -468,6 +548,11 @@ const Registro = (props: IRegistroPageProps) => {
 											<option value={pago.VALUE} key={pago.VALUE}>{pago.TEXT}</option>
 											) }
 										</select>
+										{ errors.OPCION_PAGO && touched.OPCION_PAGO &&
+										<span className="text-red-600 text-sm ml-2">
+											{ errors.OPCION_PAGO }
+										</span>
+										}
 									</div>
 
 									<div className="mb-6 mt-14 flex justify-center items-center">

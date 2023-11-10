@@ -14,7 +14,7 @@ export interface EnvioDatos {
 	INSTITUCION_ESTUDIO: string;
 	DISPOSITIVO_ACADEMICO: string;
 	OPCION_EQUIPO: string;
-	ACEPTO_CARACTERISTICAS: string;
+	ACEPTO_CARACTERISTICAS: boolean;
 	NECESITA_CONTACTO: string;
 	OPCION_PAGO: string;
 }

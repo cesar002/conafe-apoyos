@@ -33,7 +33,7 @@ export default async function handler(
 	form.append('INSTITUCION_ESTUDIO', datos.INSTITUCION_ESTUDIO);
 	form.append('DISPOSITIVO_ACADEMICO', datos.DISPOSITIVO_ACADEMICO);
 	form.append('OPCION_EQUIPO', datos.OPCION_EQUIPO);
-	form.append('ACEPTO_CARACTERISTICAS', datos.ACEPTO_CARACTERISTICAS);
+	form.append('ACEPTO_CARACTERISTICAS', datos.ACEPTO_CARACTERISTICAS ? '1' : '0');
 	form.append('OPCION_PAGO', datos.OPCION_PAGO);
 	form.append('NECESITA_CONTACTO', datos.NECESITA_CONTACTO);
 
