@@ -9,7 +9,10 @@ const FortaleceSeccion = () => {
 					Fortalece tu formación
 				</p>
 				<p className="text-white lg:text-2xl text-xl font-semibold text-center lg:text-left lg:w-[70%]">
-					Queremos promover el seguimiento, la observación y la práctica de la <strong>Relación Tutora a distancia y en līnea.</strong>
+					Potencia tus habilidades en la Relación Tutora y compleméntala con acceso a más recursos y capacitación.
+				</p>
+				<p className="text-white lg:text-2xl text-xl font-semibold text-center lg:text-left lg:w-[70%]">
+					Queremos promover el seguimiento, la observación y tu práctica <strong className="font-black">profesional presencial y en línea.</strong>
 				</p>
 				{/* <p className="text-white lg:text-2xl text-xl font-semibold text-center lg:text-left lg:w-[70%]">
 					Fortalecer la práctica pedagógica por medio de favorecer el <strong>acceso a información y textos.</strong>
