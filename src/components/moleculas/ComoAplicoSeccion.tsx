@@ -15,43 +15,54 @@ const ComoAplicoSeccion = ({
 					¿Cómo aplico para el apoyo?
 				</p>
 			</div>
-			<div className="flex lg:flex-row flex-col justify-around lg:items-center items-center mt-16 gap-y-10">
-				<div className="flex justify-center items-center flex-col lg:w-1/3 w-full">
+			<div className="grid xl:grid-cols-4 lg:grid-cols-2 grid-cols-1 gap-3 mt-16">
+				<div className="flex flex-col justify-center items-center">
 					<Image
-						src="/assets/04-Asset_12img.png"
-						alt=""
-						width={230}
-						height={230}
-					/>
-					<p className="lg:text-2xl text-xl text-gray-400 mt-5">
-						Realiza la <strong>solicitud en línea</strong>
-					</p>
-				</div>
-				<div className="flex justify-center items-center flex-col lg:w-1/3 w-full">
-					<Image
-						src="/assets/05-Asset_13img.png"
-						alt=""
+						src="/assets/iconos-aplicar-02.png"
+						alt="imagen del apoyo"
 						width={300}
 						height={300}
 					/>
-					<p className="lg:text-2xl text-xl text-gray-400 mt-5 text-center w-1/2">
-						<strong>Firma carta compromiso</strong> de recibir el apoyo tecnológico de CONAFE
+					<p className="text-center text-lg text-gray-500">
+						Realiza la <span className="font-bold text-gray-600">solicitud en linea</span>
 					</p>
 				</div>
-				<div className="flex justify-center items-center flex-col lg:w-1/3 w-full">
+				<div className="flex flex-col justify-center items-center">
 					<Image
-						src="/assets/06-Asset_14img.png"
-						alt=""
+						src="/assets/iconos-aplicar-03.png"
+						alt="imagen del apoyo"
 						width={300}
 						height={300}
 					/>
-					<p className="lg:text-2xl text-xl text-gray-400 mt-5 text-center w-1/2">
-						<strong>Permanece en la práctica educativa</strong> durante el ciclo escolar 2023 - 2024
+					<p className="text-center text-lg text-gray-500">
+						La <span className="font-bold text-gray-600">Coordinación territorial te va a notificar</span> si eres de los beneficiados con el apoyo
+					</p>
+				</div>
+				<div className="flex flex-col justify-center items-center">
+					<Image
+						src="/assets/iconos-aplicar-04.png"
+						alt="imagen del apoyo"
+						width={300}
+						height={300}
+					/>
+					<p className="text-center text-lg text-gray-500">
+						<span className="font-bold text-gray-500">Firma carta compromiso</span> de recibir el apoyo tecnológico del CONAFE
+					</p>
+				</div>
+				<div className="flex flex-col justify-center items-center">
+					<Image
+						src="/assets/iconos-aplicar-05.png"
+						alt="imagen del apoyo"
+						width={300}
+						height={300}
+					/>
+					<p className="text-center text-lg text-gray-500">
+						<span className="font-bold text-gray-500">Permanece en la práctica educativa</span> durante el ciclo escolar 2023-2024
 					</p>
 				</div>
 			</div>
 			<div className="flex justify-center items-center mt-14">
-				<button className="bg-con-red py-5 uppercase text-white lg:w-[20%] w-full rounded-full font-medium text-lg"
+				<button className="bg-con-blue py-5 uppercase text-white font-bold lg:w-[20%] w-full rounded-full text-lg"
 					onClick={handleClick}
 				>
 					Regístrate aquí
