@@ -6,13 +6,13 @@ const FavoreceSeccion = () => {
 		<div className="bg-[url('/assets/4Asset_27foto-BIEN.jpg')] bg-center bg-cover lg:min-h-[35rem] min-h-[40rem] w-full flex px-5 lg:px-20 lg:py-36 py-10">
 			<div className="flex flex-col lg:w-1/2 w-full gap-y-5 lg:justify-items-start lg:items-start justify-center items-center">
 				<p className="text-white text-4xl lg:text-5xl font-bold lg:w-[70%] w-full lg:text-left text-center">
-					Favorece la continuidad de tus estudios y tu profesionalización
+					Fortalece tu formación
 				</p>
 				<p className="text-white text-3xl font-light lg:text-left text-center">
-					<strong className="font-bold">Queremos</strong> que tengas todas las herramientas para seguir estudiando desde cualquier lugar.
+					Potencia tus habilidades en la Relación Tutora y compleméntala con acceso a más recursos y capacitación.
 				</p>
 				<p className="text-white text-3xl font-light lg:text-left text-center">
-					Este apoyo representa un reconocimiento a tu dedicación y pasión, además de expresar gratitud por tu compromiso con la comunidad
+					Queremos promover el seguimiento, la observación y tu práctica presencial y en línea.
 				</p>
 			</div>
 			{/* <div className="lg:w-[40%] relative flex justify-center items-center">
