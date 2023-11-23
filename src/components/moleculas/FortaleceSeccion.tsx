@@ -12,7 +12,7 @@ const FortaleceSeccion = () => {
 					Queremos que tengas todas las herramientas para seguir estudiando desde cualquier lugar.
 				</p>
 				<p className="text-white lg:text-2xl text-xl font-semibold text-center lg:text-left lg:w-[80%]">
-					Este apoyo representa un reconocimiento a tu dedicación y pasión, además de expresar gratitud por tu compromiso con la comunidad
+					Este apoyo representa un reconocimiento a tu dedicación y pasión, además de expresar gratitud por tu compromiso con la comunidad.
 				</p>
 				{/* <p className="text-white lg:text-2xl text-xl font-semibold text-center lg:text-left lg:w-[70%]">
 					Fortalecer la práctica pedagógica por medio de favorecer el <strong>acceso a información y textos.</strong>
