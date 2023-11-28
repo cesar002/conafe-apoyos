@@ -10,6 +10,7 @@ import { OpcionesGenerales } from "@/Models/OpcionesGenerales";
 import { EnvioDatos } from "@/Models/EnvioDatos";
 import Loading from "@/components/moleculas/Loading";
 import Link from "next/link";
+import Header from "@/components/moleculas/Header";
 
 interface IRegistroPageProps {
 	opcionesCONAFE: OpcionesCONAFE | null;
@@ -84,11 +85,7 @@ const Registro = (props: IRegistroPageProps) => {
 
 	return (
 		<div className="bg-con-primary min-h-screen w-full">
-			<div className="bg-[url('/assets/01-Asset_3formulario.png')] bg-cover bg-no-repeat lg:min-h-[28rem] min-h-[23rem] w-full flex xl:justify-center lg:justify-end justify-center lg:items-start items-center xl:pr-0 lg:pr-5 pr-0">
-				<span className="text-white xl:text-4xl lg:text-3xl text-2xl font-bold lg:mt-32 mt-10 text-center">
-					Apoyo tecnólogico para Educadores Comunitarios
-				</span>
-			</div>
+			<Header />
 			<div className="lg:px-32 lg:py-28 px-5 lg:mt-0 ">
 				<div className="flex justify-center items-center">
 					{ procesoFinalizado &&
