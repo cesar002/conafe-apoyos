@@ -501,7 +501,7 @@ const Registro = (props: IRegistroPageProps) => {
 
 									<div className="mb-6 text-gray-600">
 										<p>
-											Equipo de Cómputo incluídos en el Programa
+											Equipo de cómputo incluído de fabricantes reconocidos
 										</p>
 										<p className="text-sm mb-3">
 											El equipo que ofrece este programa considera los requerimientos generales para entornos educativos y profesionales, se trata de fabricante reconocidos por su calidad (HP, Lenovo, Huawei, Asus, Acer u otro), durabilidad y ciclo de vida. Cuentan con 1 año de garantía y soporte con el fabricante.
