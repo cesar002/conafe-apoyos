@@ -501,10 +501,10 @@ const Registro = (props: IRegistroPageProps) => {
 
 									<div className="mb-6 text-gray-600">
 										<p>
-											Equipo de cómputo incluído de fabricantes reconocidos
+											Equipo de cómputo incluido:
 										</p>
-										<p className="text-sm mb-3">
-											El equipo que ofrece este programa considera los requerimientos generales para entornos educativos y profesionales, se trata de fabricante reconocidos por su calidad (HP, Lenovo, Huawei, Asus, Acer u otro), durabilidad y ciclo de vida. Cuentan con 1 año de garantía y soporte con el fabricante.
+										<p className="text-sm my-3">
+											El equipo que ofrece este programa considera los requerimientos generales para entornos educativos y profesionales. Se trata de fabricantes reconocidos por su calidad (HP, Lenovo, Huawei, Asus, Acer u otro), durabilidad y ciclo de vida. Cuentan con 1 año de garantía y soporte con el fabricante.
 										</p>
 
 										<select id="opcion_de_equipo" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 hidden"
