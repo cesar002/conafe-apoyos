@@ -94,7 +94,7 @@ const Registro = (props: IRegistroPageProps) => {
 							¡Muchas gracias por aplicar!
 						</h3>
 						<p className="text-gray-700 font-semibold text-center lg:text-3xl text-lg">
-							Tus respuestas han sido registradas, pronte te contactaremos con más detalles del avance de tu aplicación
+							Tus respuestas han sido registradas, pronto te contactaremos con más detalles del avance de tu aplicación
 						</p>
 						<div className="flex justify-center items-center">
 							<Link
@@ -588,7 +588,7 @@ const Registro = (props: IRegistroPageProps) => {
 
 									<div className="mb-6">
 										<p className="text-gray-700 mb-2">
-											Entiendo que el equipo será entregado en la Coordinación Territorial en lugar de Coordinación Operativa Estatal después de completar el pago total del mismo. A partir de febrero 2024
+											Entiendo que el equipo será entregado en la Coordinación Territorial Estatal después de completar el pago total del mismo.
 										</p>
 										<p className="text-gray-700 mb-2">
 											El equipo tiene un costo de $8,900.00 mxn. Cómo parte de este Apoyo Tecnológico para Educadores Comunitarios, CONAFE aportará $4,450.00 mxn, la diferencia será completada por mi en el siguiente plazo:
