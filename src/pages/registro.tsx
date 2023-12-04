@@ -477,7 +477,7 @@ const Registro = (props: IRegistroPageProps) => {
 									{ values.UTILIZAS_EQUIPO_COMPUTO == 'SI' &&
 									<div className="mb-6">
 										<label htmlFor="dispositivo_usas" className="block mb-2 text-sm font-medium text-gray-900">
-											¿Que dispositivo utilizas mas para tus actividades academicas? <span className="text-red-600">*</span>
+											¿Qué dispositivo utilizas mas para tus actividades academicas? <span className="text-red-600">*</span>
 										</label>
 										<select id="dispositivo_usas" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
 											required
@@ -507,7 +507,7 @@ const Registro = (props: IRegistroPageProps) => {
 											El equipo que ofrece este programa considera los requerimientos generales para entornos educativos y profesionales. Se trata de fabricantes reconocidos por su calidad (HP, Lenovo, Huawei, Asus, Acer u otro), durabilidad y ciclo de vida. Cuentan con 1 año de garantía y soporte con el fabricante.
 										</p>
 
-										<select id="opcion_de_equipo" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 hidden"
+										<select id="opcion_de_equipo" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5 hidden"
 											required
 											name="OPCION_EQUIPO"
 											value={values.OPCION_EQUIPO}
@@ -521,11 +521,11 @@ const Registro = (props: IRegistroPageProps) => {
 										</select>
 
 										<p className="text-sm">
-											{ props.opcionesCONAFE?.OPCION_EQUIPO[1].TEXT }
+											{ props.opcionesCONAFE?.OPCION_EQUIPO[1].TEXT }.
 										</p>
 
 										<p className="text-sm mt-3">
-											Los equipos incluyen acceso a las herramientas de productividad, comunicación y colaboración de Google Workspace for Education en el dominio educativo @conafe.nuevaescuela.mx y capacitación en línea para certificarse Google Educator Nivel 1.
+											Los equipos incluyen acceso a las herramientas de productividad, comunicación y colaboración de Google Workspace for Education en el dominio educativo @conafe.nuevaescuela.mx y capacitación en línea para certificarse en Google Educator Nivel 1.
 										</p>
 									</div>
 
@@ -591,7 +591,7 @@ const Registro = (props: IRegistroPageProps) => {
 											Entiendo que el equipo será entregado en la Coordinación Territorial Estatal después de completar el pago total del mismo.
 										</p>
 										<p className="text-gray-700 mb-2">
-											El equipo tiene un costo de $8,900.00 mxn. Cómo parte de este Apoyo Tecnológico para Educadores Comunitarios, CONAFE aportará $4,450.00 mxn, la diferencia será completada por mi en el siguiente plazo:
+											El equipo tiene un costo de $8,900.00 mxn. Como parte de este Apoyo Tecnológico para Educadores Comunitarios, CONAFE aportará $4,450.00 mxn, la diferencia será completada por mi en el siguiente plazo:
 										</p>
 										<select className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
 											required

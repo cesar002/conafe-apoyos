@@ -55,7 +55,7 @@ const PuedoSerCandidatoSeccion = ({
 								EC
 							</span>
 							<p className="text-white text-base">
-							con una antigüedad de 2 años o más en la práctica educativa, que estén estudiando su bachillerato, licenciatura, especialidad maestría.
+							con una antigüedad de 2 años o más en la práctica educativa, que estén estudiando su bachillerato, licenciatura, especialización o maestría.
 							</p>
 						</div>
 					</div>
