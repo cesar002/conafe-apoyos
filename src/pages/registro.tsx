@@ -32,7 +32,23 @@ const Registro = (props: IRegistroPageProps) => {
 		setOpcionesGenerales(data);
 	}
 
-	const buscarUsuario = () => {
+	const buscarUsuario = async () => {
+		try {
+			setConsultando(true);
+			const { data } = await axios.post<any, any>('/api/busqueda-numero-control', {
+				numeroControl: numeroControl,
+			});
+
+			setDatosUsuario(data);
+		} catch (error) {
+
+		}finally{
+			setConsultando(false);
+			setConsultaFinalizada(true);
+		}
+	}
+
+	const buscarUsuarioTimeout = () => {
 		clearTimeout(timeout);
 		const time = setTimeout(() => {
 			setConsultando(true);
@@ -80,7 +96,7 @@ const Registro = (props: IRegistroPageProps) => {
 		if(!numeroControl)
 			return;
 
-		buscarUsuario();
+		buscarUsuarioTimeout();
 	}, [numeroControl]);
 
 	return (
@@ -176,7 +192,7 @@ const Registro = (props: IRegistroPageProps) => {
 								isSubmitting,
 							})=>(
 							<form onSubmit={handleSubmit} className="w-full">
-								<div className="mb-6">
+								<div className="mb-10">
 									<label htmlFor="numero_control" className="block mb-2 text-sm font-medium text-gray-900">
 										Número de control<span className="text-red-600">*</span>
 									</label>
@@ -185,6 +201,12 @@ const Registro = (props: IRegistroPageProps) => {
 										onChange={e => setNumeroControl(e.target.value)}
 										disabled={isSubmitting}
 									/>
+									<button className="p-3 lg:w-36 w-full h-10 bg-con-blue flex justify-center items-center text-white rounded-md mt-3"
+										disabled={consultando}
+										onClick={buscarUsuario}
+									>
+										Buscar
+									</button>
 								</div>
 								{ consultando &&
 								<div className="flex justify-center items-center mt-10">
