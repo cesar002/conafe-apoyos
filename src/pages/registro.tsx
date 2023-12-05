@@ -35,6 +35,7 @@ const Registro = (props: IRegistroPageProps) => {
 	const buscarUsuario = async () => {
 		try {
 			setConsultando(true);
+			setConsultaFinalizada(false);
 			const { data } = await axios.post<any, any>('/api/busqueda-numero-control', {
 				numeroControl: numeroControl,
 			});
