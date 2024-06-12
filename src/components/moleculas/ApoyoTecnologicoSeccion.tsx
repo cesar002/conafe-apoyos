@@ -6,7 +6,7 @@ const ApoyoTecnologicoSeccion = () => {
 				¿En que consiste el apoyo tecnológico?
 			</p>
 			<p className="text-white text-center lg:text-2xl text-xl lg:w-[70%]">
-				CONAFE te entregará <strong>un apoyo económico de $4,450.00 mxn</strong> y tú podrás complementar de manera diferida (máximo de 6 meses) <strong>para acceder a un equipo de cómputo de $8,900.00 mxn</strong> con las siguientes características:
+				CONAFE te entregará <strong>un apoyo económico de $4,450.00 mxn</strong> y tú podrás complementar de manera diferida (máximo de 4 meses) <strong>para acceder a un equipo de cómputo de $8,900.00 mxn</strong> con las siguientes características:
 			</p>
 		</div>
 	)

@@ -23,22 +23,22 @@ const CaracteristicasSeccion = ({
 			<div className="lg:w-[60%] w-full flex flex-col justify-center items-start px-20 gap-y-10 mt-5 lg:mt-0">
 				<ul className="text-gray-400 lg:text-2xl text-xl font-semibold list-disc">
 					<li>
-						Pantalla: 14 pulgadas o superior
+						Pantalla: LCD 14 HD AG LED SVA NWBZ HD
 					</li>
 					<li>
-						Memoria RAM: 8 GB
+						Memoria RAM: 8 GB (1x(GB) DDR4 3200)
 					</li>
 					<li>
-						Disco duro de estado solido (SSD*): 226 GB
+						Disco duro: SSD 512 GB
 					</li>
 					<li>
-						Procesador: Intel Core i3, AMD Ryzen3 o similar
+						Procesador: AMD Ryzen3
 					</li>
 					<li>
-						Sistema operativo: Windows Home 64bits
+						Sistema operativo: Windows 11 Home, 64 bits
 					</li>
 					<li>
-						Fabricante reconocido: HP, Lenovo, Huawei, Asus, Acer o similar
+						BATT 3c 41 WHr Long Life
 					</li>
 				</ul>
 				<span className="text-sm text-gray-500">

@@ -13,8 +13,8 @@ const Header = () => {
 				/>
 			</div>
 			<div className="md:w-3/4 w-full flex justify-center items-center lg:px-10">
-				<p className="text-center lg:text-5xl text-2xl font-bold text-white">
-					Apoyo tecnólogico para Educadores Comunitarios
+				<p className="lg:text-left text-center lg:text-4xl md:text-2xl text-lg font-bold text-white">
+				Apoyo Económico adicional para Fortalecer el Desempeño Académico y Profesional de las Figuras Educativas del CONAFE
 				</p>
 			</div>
 		</div>

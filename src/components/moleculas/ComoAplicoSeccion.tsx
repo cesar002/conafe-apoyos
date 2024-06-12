@@ -24,18 +24,21 @@ const ComoAplicoSeccion = ({
 						height={300}
 					/>
 					<p className="text-center text-lg text-gray-500">
-						Realiza la <span className="font-bold text-gray-600">solicitud en linea</span>
+						Realiza  <span className="font-bold text-gray-600">solicitud en linea</span>
+					</p>
+					<p className="text-base text-center">
+						asegurate de registrar tus datos correctamente, ya que estos serán verificados y se tomarán para darte aviso de los siguientes procesos.
 					</p>
 				</div>
 				<div className="flex flex-col justify-center items-center">
 					<Image
-						src="/assets/iconos-aplicar-03.png"
+						src="/assets/email.png"
 						alt="imagen del apoyo"
 						width={300}
 						height={300}
 					/>
 					<p className="text-center text-lg text-gray-500">
-						La <span className="font-bold text-gray-600">Coordinación territorial te va a notificar</span> si eres de los beneficiados con el apoyo
+						<span className="font-bold text-gray-500">Si eres beneficiado</span> con el apoyo recibirás un correo electrónico, el señalado en la plataforma de registro
 					</p>
 				</div>
 				<div className="flex flex-col justify-center items-center">
@@ -57,7 +60,7 @@ const ComoAplicoSeccion = ({
 						height={300}
 					/>
 					<p className="text-center text-lg text-gray-500">
-						<span className="font-bold text-gray-500">Permanece en la práctica educativa</span> durante el ciclo escolar 2023-2024
+						<span className="font-bold text-gray-500">Permanece en la práctica educativa</span> durante el ciclo escolar 2024-2024
 					</p>
 				</div>
 			</div>

@@ -46,7 +46,7 @@ const PuedoSerCandidatoSeccion = ({
 				</div>
 				<div className="flex w-full">
 					<div className="lg:w-[20%]" />
-					<div className="lg:w-[80%] w-full flex lg:flex-row flex-col lg:items-start items-center gap-y-5 gap-x-10">
+					<div className="xl:w-[80%] lg:w-[90%] w-full flex lg:flex-row flex-col lg:items-start items-center gap-y-5 gap-x-10">
 						<span className="text-con-green lg:text-8xl text-7xl font-bold">
 							3
 						</span>
@@ -54,7 +54,7 @@ const PuedoSerCandidatoSeccion = ({
 							<span className="lg:text-6xl text-5xl font-semibold">
 								EC
 							</span>
-							<p className="text-white text-base">
+							<p className="text-white xl:text-base lg:text-sm md:text-base">
 							con una antigüedad de 2 años o más en la práctica educativa, que estén estudiando su bachillerato, licenciatura, especialización o maestría.
 							</p>
 						</div>
