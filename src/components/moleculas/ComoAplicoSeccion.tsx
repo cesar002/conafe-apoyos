@@ -64,13 +64,6 @@ const ComoAplicoSeccion = ({
 					</p>
 				</div>
 			</div>
-			<div className="flex justify-center items-center mt-14">
-				<button className="bg-con-blue py-5 uppercase text-white font-bold lg:w-[20%] w-full rounded-full text-lg"
-					onClick={handleClick}
-				>
-					Regístrate aquí
-				</button>
-			</div>
 		</div>
 	)
 }
