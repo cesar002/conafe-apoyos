@@ -24,10 +24,10 @@ const ComoAplicoSeccion = ({
 						height={300}
 					/>
 					<p className="text-center text-lg text-gray-500">
-						Realiza  <span className="font-bold text-gray-600">solicitud en linea</span>
+						<span className="font-bold text-gray-600">Realiza tu registro en línea</span>, conforme a esta Convocatoria.
 					</p>
-					<p className="text-base text-center">
-						asegurate de registrar tus datos correctamente, ya que estos serán verificados y se tomarán para darte aviso de los siguientes procesos.
+					<p className="text-xs text-center text-gray-500">
+						Asegúrate de registrar tus datos correctamente, ya que serán verificados y se tomarán para darte aviso sobre los siguientes procesos.
 					</p>
 				</div>
 				<div className="flex flex-col justify-center items-center">
@@ -38,7 +38,7 @@ const ComoAplicoSeccion = ({
 						height={300}
 					/>
 					<p className="text-center text-lg text-gray-500">
-						<span className="font-bold text-gray-500">Si eres beneficiado</span> con el apoyo recibirás un correo electrónico, el señalado en la plataforma de registro
+						<span className="font-bold text-gray-500">Si eres beneficiado</span>, recibirás un correo electrónico
 					</p>
 				</div>
 				<div className="flex flex-col justify-center items-center">
@@ -49,7 +49,7 @@ const ComoAplicoSeccion = ({
 						height={300}
 					/>
 					<p className="text-center text-lg text-gray-500">
-						<span className="font-bold text-gray-500">Firma carta compromiso</span> de recibir el apoyo tecnológico del CONAFE
+						<span className="font-bold text-gray-500">Firma carta compromiso</span> desde tu App
 					</p>
 				</div>
 				<div className="flex flex-col justify-center items-center">
@@ -60,7 +60,7 @@ const ComoAplicoSeccion = ({
 						height={300}
 					/>
 					<p className="text-center text-lg text-gray-500">
-						<span className="font-bold text-gray-500">Permanece en la práctica educativa</span> durante el ciclo escolar 2024-2024
+						<span className="font-bold text-gray-500">Permanece en la práctica educativa</span> durante el ciclo escolar 2024-2025
 					</p>
 				</div>
 			</div>
