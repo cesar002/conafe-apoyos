@@ -10,11 +10,8 @@ const PuedoSerCandidatoSeccion = ({
 	return (
 		<div className="bg-primary min-h-[50rem] w-full flex flex-col pb-10 px-5 lg:px-0">
 			<div className="flex flex-col justify-center items-center gap-y-10">
-				<p className="text-con-green lg:text-5xl text-4xl font-bold text-center">
-					¿Puedo ser candidato?
-				</p>
 				<p className="text-gray-400 text-center lg:text-2xl text-xl font-semibold w-full">
-					<strong>Se dará preferencia en la asignación</strong> del apoyo tecnológico, en el siguiente orden de prioridad:
+					Debido a que los recursos son limitados, será necesario aplicar criterios de prelación para la asignación de los apoyos adicionales, por lo que es muy importante que incorpores tus datos correctamente.
 				</p>
 			</div>
 			<div className="flex flex-col w-full lg:mt-24 mt-14 gap-y-5">

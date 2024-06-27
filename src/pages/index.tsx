@@ -46,6 +46,19 @@ const Home = () => {
 			<ApoyoTecnologicoSeccion />
 			<CaracteristicasSeccion />
 			<ComoAplicoSeccion handleClick={irAlRegistro} />
+			<section className="mt-10 mb-20 w-full px-10">
+				<p className="text-gray-600 lg:text-3xl text-2xl lg:text-left text-center">
+					Se Convoca a Figuras Educativas del Consejo Nacional de Fomento Eductavio que tengan interés en ser beneficiados con un apoyo adicional, correspondiente al 50% del costo de un equipo de cómputo.
+				</p>
+				<ul className="list-disc ml-10 text-gray-600 mt-5 text-xl">
+					<li>
+						Realiza tu registro de manera voluntaria.
+					</li>
+					<li>
+						Podres si eres figuras educativa que presta su servicio social en el CONAFE (ECAR, ECA y EC)
+					</li>
+				</ul>
+			</section>
 			<PuedoSerCandidatoSeccion handleClick={irAlRegistro} />
 			<GoogleSeccion handleClick={irAlRegistro} />
 		</div>
