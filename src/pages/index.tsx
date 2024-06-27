@@ -29,10 +29,18 @@ const Home = () => {
 				</p>
 			</div>
 			<FavoreceSeccion />
-			<div className="bg-[url('/assets/kid.jpg')] bg-center bg-no-repeat bg-cover lg:min-h-[40rem] min-h-[30rem] w-full p-10 flex justify-center items-center">
-				<p className="text-white font-semibold lg:text-3xl text-2xl lg:text-left text-center">
-					Impulsa tu desempeño académico Desarrolla actividades que favorezcan el Modelo de Educación Comunitaria y la Relación Tutora cuenta con más herramientas de búsqueda e investigación para el desarrollo de temas de interés
-				</p>
+			<div className="bg-[url('/assets/kid.jpg')] bg-center bg-no-repeat bg-cover lg:min-h-[40rem] min-h-[30rem] w-full p-10 flex justify-end">
+				<div className="flex flex-col xl:w-1/2 w-full gap-y-5 lg:justify-items-start lg:items-start justify-center items-center">
+					<p className="text-white text-4xl lg:text-5xl font-bold lg:text-left text-center">
+						Fortalece tu formación
+					</p>
+					<p className="text-white text-3xl font-light lg:text-left text-center">
+						Potencia tus habilidades en la Relación Tutora y compleméntala con acceso a más recursos y capacitación.
+					</p>
+					<p className="text-white text-3xl font-light lg:text-left text-center">
+						Queremos promover el seguimiento, la observación y tu práctica presencial y en línea.
+					</p>
+				</div>
 			</div>
 			<FortaleceSeccion />
 			<ApoyoTecnologicoSeccion />

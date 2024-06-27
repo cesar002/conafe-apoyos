@@ -93,13 +93,6 @@ const PuedoSerCandidatoSeccion = ({
 					</div>
 				</div>
 			</div>
-			<div className="flex justify-center items-center mt-16">
-				<button className="bg-con-green py-5  text-white font-medium text-lg lg:w-1/5 w-full uppercase rounded-full"
-					onClick={handleClick}
-				>
-					Regístrate aquí
-				</button>
-			</div>
 		</div>
 	)
 }

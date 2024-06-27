@@ -74,6 +74,8 @@ const Registro = (props: IRegistroPageProps) => {
 			INSTITUCION_ESTUDIO: values.ESTUDIAS_ACTUALMENTE == 'SI' ? values.INSTITUCION_ESTUDIO : '',
 			TIPO_ESTUDIO: values.ESTUDIAS_ACTUALMENTE == 'SI' ? values.TIPO_ESTUDIO : '',
 			DISPOSITIVO_ACADEMICO: values.UTILIZAS_EQUIPO_COMPUTO == 'SI' ? values.DISPOSITIVO_ACADEMICO : '',
+			FECHA_INGRESO: '',
+			TIPO_FIGURA: '',
 		}
 		try {
 			setEnviandoDatos(true);
@@ -160,8 +162,8 @@ const Registro = (props: IRegistroPageProps) => {
 											.min(10, 'El campo debe ser de 10 dígitos')
 											.max(10, 'El campo debe ser de 10 dígitos')
 											.required('Campo requerido'),
-								FECHA_INGRESO: Yup.string().required('Campo requerido'),
-								TIPO_FIGURA: Yup.string().required('Campo requerido'),
+								// FECHA_INGRESO: Yup.string().required('Campo requerido'),
+								// TIPO_FIGURA: Yup.string().required('Campo requerido'),
 								ESTUDIAS_ACTUALMENTE: Yup.string().required('Campo requerido'),
 								TIPO_ESTUDIO: Yup.string().when('ESTUDIAS_ACTUALMENTE', {
 									is: 'SI',
@@ -239,7 +241,7 @@ const Registro = (props: IRegistroPageProps) => {
 										/>
 										{ errors.NOMBRE && touched.NOMBRE &&
 										<span className="text-red-600 text-sm ml-2">
-											{ errors.NOMBRE }
+											{ errors.NOMBRE as string }
 										</span>
 										}
 									</div>
@@ -254,7 +256,7 @@ const Registro = (props: IRegistroPageProps) => {
 										/>
 										{ errors.PATERNO && touched.PATERNO &&
 										<span className="text-red-600 text-sm ml-2">
-											{ errors.PATERNO }
+											{ errors.PATERNO as string }
 										</span>
 										}
 									</div>
@@ -269,7 +271,7 @@ const Registro = (props: IRegistroPageProps) => {
 										/>
 										{ errors.MATERNO && touched.MATERNO &&
 										<span className="text-red-600 text-sm ml-2">
-											{ errors.MATERNO }
+											{ errors.MATERNO as string }
 										</span>
 										}
 									</div>
@@ -284,7 +286,7 @@ const Registro = (props: IRegistroPageProps) => {
 										/>
 										{ errors.NUMERO_CONTROL && touched.NUMERO_CONTROL &&
 										<span className="text-red-600 text-sm ml-2">
-											{ errors.NUMERO_CONTROL }
+											{ errors.NUMERO_CONTROL as string }
 										</span>
 										}
 									</div>
@@ -299,7 +301,7 @@ const Registro = (props: IRegistroPageProps) => {
 										/>
 										{ errors.CURP && touched.CURP &&
 										<span className="text-red-600 text-sm ml-2">
-											{ errors.CURP }
+											{ errors.CURP as string }
 										</span>
 										}
 									</div>
@@ -359,12 +361,12 @@ const Registro = (props: IRegistroPageProps) => {
 										</select>
 										{ errors.ESTADO && touched.ESTADO &&
 										<span className="text-red-600 text-sm ml-2">
-											{ errors.ESTADO }
+											{ errors.ESTADO as string }
 										</span>
 										}
 									</div>
 
-									<div className="mb-6">
+									{/* <div className="mb-6">
 										<label htmlFor="fecha_ingreso" className="block mb-2 text-sm font-medium text-gray-900">
 											Fecha de Ingreso a CONAFE <span className="text-red-600">*</span>
 										</label>
@@ -381,9 +383,9 @@ const Registro = (props: IRegistroPageProps) => {
 											{ errors.FECHA_INGRESO }
 										</span>
 										}
-									</div>
+									</div> */}
 
-									<div className="mb-6">
+									{/* <div className="mb-6">
 										<label htmlFor="tipo_figuras" className="block mb-2 text-sm font-medium text-gray-900">
 											Tipo de figura <span className="text-red-600">*</span>
 										</label>
@@ -404,7 +406,7 @@ const Registro = (props: IRegistroPageProps) => {
 											{ errors.TIPO_FIGURA }
 										</span>
 										}
-									</div>
+									</div> */}
 
 									<div className="mb-6">
 										<label htmlFor="estudias" className="block mb-2 text-sm font-medium text-gray-900">
@@ -674,9 +676,14 @@ export async function getServerSideProps() {
 			}
 		});
 
+		const _opcionesCONAFE = {
+			...opcionesCONAFE,
+			OPCION_PAGO: opcionesCONAFE.OPCION_PAGO.filter(op => (op.VALUE != '4' && op.VALUE != '5')),
+		}
+
 		return {
 			props: {
-				opcionesCONAFE,
+				opcionesCONAFE: _opcionesCONAFE,
 			}
 		}
 	} catch (error) {
