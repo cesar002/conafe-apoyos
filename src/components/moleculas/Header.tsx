@@ -14,7 +14,7 @@ const Header = () => {
 			</div>
 			<div className="md:w-3/4 w-full flex justify-center items-center lg:px-10">
 				<p className="lg:text-left text-center lg:text-4xl md:text-2xl text-lg font-bold text-white">
-				Apoyo Económico adicional para Fortalecer el Desempeño Académico y Profesional de las Figuras Educativas del CONAFE
+					Convocataria para el Fortalecimiento del Desempeño Académico y Profesional de las Figuras Educativas mediante un Apoyo Económico adicional  para acceder a dispositivos Tecnológicos.
 				</p>
 			</div>
 		</div>
