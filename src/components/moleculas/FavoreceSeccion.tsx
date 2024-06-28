@@ -9,7 +9,10 @@ const FavoreceSeccion = () => {
 					Impulsa tu desempeño académico
 				</p>
 				<p className="text-white text-3xl font-light lg:text-left text-center">
-					Desarrolla actividades que favorezcan el Modelo de Educación Comunitaria y la Relación Tutora cuenta con más herramientas de búsqueda e investigación para el desarrollo de temas de interés.
+					Desarrolla actividades que favorezcan el Modelo de Educación Comunitaria y la Relación Tutora.
+				</p>
+				<p className="text-white text-3xl font-light lg:text-left text-center">
+					Cuenta con más herramientas de búsqueda e investigación para el desarrollo de temas de interés.
 				</p>
 			</div>
 		</div>
