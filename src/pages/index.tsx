@@ -47,7 +47,7 @@ const Home = () => {
 							Realiza tu registro de manera voluntaria.
 						</li>
 						<li>
-							Podrás si eres figura educativa que presta su servicio social en el CONAFE (ECAR, ECA y EC)
+							Podrás aplicar si eres figura educativa que presta su servicio social en el CONAFE (ECAR, ECA y EC)
 						</li>
 					</ul>
 				</div>
