@@ -37,12 +37,12 @@ const Home = () => {
 			<ApoyoTecnologicoSeccion />
 			<CaracteristicasSeccion />
 			<ComoAplicoSeccion handleClick={irAlRegistro} />
-			<section className="mt-10 mb-20 w-full px-10">
-				<div className="border-2 border-blue-400 p-3">
-					<p className="text-gray-600 lg:text-3xl text-2xl lg:text-left text-center">
+			<section className="mt-10 mb-20 w-full bg-[#4C7DBA] p-10">
+				<div className="p-3">
+					<p className="text-white lg:text-3xl text-2xl lg:text-left text-center">
 						Se Convoca a Figuras Educativas del Consejo Nacional de Fomento Educativo que tengan interés en ser beneficiados con un apoyo adicional, correspondiente al 50% del costo de un equipo de cómputo.
 					</p>
-					<ul className="list-disc ml-10 text-gray-600 mt-5 text-xl">
+					<ul className="list-disc ml-10 text-white mt-5 text-xl">
 						<li>
 							Realiza tu registro de manera voluntaria.
 						</li>
