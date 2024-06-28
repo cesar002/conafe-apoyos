@@ -19,15 +19,6 @@ const Home = () => {
 	return (
 		<div className="min-h-screen bg-[#e4f1e7]">
 			<Header />
-			<div className="w-full min-h-[15rem] p-10 flex justify-center items-center">
-				<p className="text-gray-600 lg:text-xl text-sm">
-					Se Convoca a Figuras Educativas del Consejo Nacional de Fomento Educativo que quieran ser beneficiados con un apoyo adicional, correspondiente al 50% del costo de un equipo de cómputo.
-					En esta fase podrán ser beneficiados alrededor de 10 mil Figuras Educativas, que se registrarán bajo los siguientes criterios:
-					Realizar su registro de manera voluntaria.
-					Podrán aplicar a este apoyo todas las figuras educativas que prestan su servicio social en el CONAFE (ECAR, ECA y EC)
-					Debido a que los recursos son limitados, y que en cada fase será necesario aplicar criterios de prelación para la asignación de los mismos, es muy importante que incorpores tus datos correctamente (tipo de figura educativa, fecha de ingreso al CONAFE, qué estudias y en qué institución)
-				</p>
-			</div>
 			<FavoreceSeccion />
 			<div className="bg-[url('/assets/kid.jpg')] bg-center bg-no-repeat bg-cover lg:min-h-[40rem] min-h-[30rem] w-full p-10 flex justify-end">
 				<div className="flex flex-col xl:w-1/2 w-full gap-y-5 lg:justify-items-start lg:items-start justify-center items-center">
@@ -47,17 +38,19 @@ const Home = () => {
 			<CaracteristicasSeccion />
 			<ComoAplicoSeccion handleClick={irAlRegistro} />
 			<section className="mt-10 mb-20 w-full px-10">
-				<p className="text-gray-600 lg:text-3xl text-2xl lg:text-left text-center">
-					Se Convoca a Figuras Educativas del Consejo Nacional de Fomento Eductavio que tengan interés en ser beneficiados con un apoyo adicional, correspondiente al 50% del costo de un equipo de cómputo.
-				</p>
-				<ul className="list-disc ml-10 text-gray-600 mt-5 text-xl">
-					<li>
-						Realiza tu registro de manera voluntaria.
-					</li>
-					<li>
-						Podres si eres figuras educativa que presta su servicio social en el CONAFE (ECAR, ECA y EC)
-					</li>
-				</ul>
+				<div className="border-2 border-blue-400 p-3">
+					<p className="text-gray-600 lg:text-3xl text-2xl lg:text-left text-center">
+						Se Convoca a Figuras Educativas del Consejo Nacional de Fomento Eductavio que tengan interés en ser beneficiados con un apoyo adicional, correspondiente al 50% del costo de un equipo de cómputo.
+					</p>
+					<ul className="list-disc ml-10 text-gray-600 mt-5 text-xl">
+						<li>
+							Realiza tu registro de manera voluntaria.
+						</li>
+						<li>
+							Podras si eres figura educativa que presta su servicio social en el CONAFE (ECAR, ECA y EC)
+						</li>
+					</ul>
+				</div>
 			</section>
 			<PuedoSerCandidatoSeccion handleClick={irAlRegistro} />
 			<GoogleSeccion handleClick={irAlRegistro} />

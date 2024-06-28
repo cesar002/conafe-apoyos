@@ -546,7 +546,7 @@ const Registro = (props: IRegistroPageProps) => {
 										</select>
 
 										<p className="text-sm">
-											{ props.opcionesCONAFE?.OPCION_EQUIPO[1].TEXT }.
+										Laptop 14” HP 200 G9-edu/ 892R5LA#ABM R3-3250U 8Gb RAM y 512 GB SSD
 										</p>
 
 										<p className="text-sm mt-3">
