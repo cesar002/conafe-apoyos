@@ -6,48 +6,69 @@ import Http from '@/Http'
 import { EnvioDatos } from '@/Models/EnvioDatos'
 import { LoginDatos } from '@/Models/LoginDatos';
 import cambiarFormatoFecha from '@/utils/cambiarFormato';
+import SlackLogs from '@/services/SlackLogs';
 
 export default async function handler(
 	req: NextApiRequest,
 	res: NextApiResponse<any>
 ) {
-	if(req.method !== 'POST') {
-		return res.status(404).end();
+	try {
+		if(req.method !== 'POST') {
+			return res.status(404).end();
+		}
+
+		const datos = req.body as EnvioDatos
+
+		const form = new FormData();
+		form.append('CURP', datos.CURP);
+		form.append('PATERNO', datos.PATERNO);
+		form.append('MATERNO', datos.MATERNO);
+		form.append('NOMBRE', datos.NOMBRE);
+		form.append('ESTADO', datos.ESTADO);
+		form.append('NUMERO_CONTROL', datos.NUMERO_CONTROL);
+		form.append('EMAIL', datos.EMAIL);
+		form.append('MOVIL', datos.MOVIL);
+		form.append('FECHA_INGRESO', cambiarFormatoFecha(datos.FECHA_INGRESO));
+		form.append('TIPO_FIGURA', datos.TIPO_FIGURA);
+		form.append('ESTUDIAS_ACTUALMENTE', datos.ESTUDIAS_ACTUALMENTE);
+		form.append('TIPO_ESTUDIO', datos.TIPO_ESTUDIO);
+		form.append('INSTITUCION_ESTUDIO', datos.INSTITUCION_ESTUDIO);
+		form.append('DISPOSITIVO_ACADEMICO', datos.DISPOSITIVO_ACADEMICO);
+		form.append('OPCION_EQUIPO', datos.OPCION_EQUIPO);
+		form.append('ACEPTO_CARACTERISTICAS', datos.ACEPTO_CARACTERISTICAS ? '1' : '0');
+		form.append('OPCION_PAGO', datos.OPCION_PAGO);
+		form.append('NECESITA_CONTACTO', datos.NECESITA_CONTACTO);
+
+		const { data: loginCredenciales } = await Http.post<LoginDatos>('/apps/form_conafe_services/accesstoken.php', {}, {
+			headers: {
+				Authorization: 'Basic RzqZldRR1dIYUdxR2Q6R2gxSlZaenRvbUJ2TjRPeg==R3FGT1Y3',
+			}
+		});
+
+		const { data } = await Http.post<any>('/apps/form_conafe_services/api_registro_formulario.php', form, {
+			headers: {
+				Authorization: `Bearer ${loginCredenciales.ACCESTOKEN}`
+			}
+		});
+
+		await SlackLogs.success('Registro de solicitud registrada', [{
+			title: 'Request Data',
+			value: JSON.stringify(req.body),
+		}, {
+			title: 'Response Data',
+         value: JSON.stringify(data),
+		}]);
+
+		return res.status(200).json(data)
+	} catch (error: any) {
+		await SlackLogs.error('Error al mandar datos de la solicitud', [{
+			title: 'Request Data',
+			value: JSON.stringify(req.body),
+		}, {
+			title: 'Error',
+         value: error?.response?.data ?? error,
+		}]);
+
+		return res.status(500).end();
 	}
-
-	const datos = req.body as EnvioDatos
-
-	const form = new FormData();
-	form.append('CURP', datos.CURP);
-	form.append('PATERNO', datos.PATERNO);
-	form.append('MATERNO', datos.MATERNO);
-	form.append('NOMBRE', datos.NOMBRE);
-	form.append('ESTADO', datos.ESTADO);
-	form.append('NUMERO_CONTROL', datos.NUMERO_CONTROL);
-	form.append('EMAIL', datos.EMAIL);
-	form.append('MOVIL', datos.MOVIL);
-	form.append('FECHA_INGRESO', cambiarFormatoFecha(datos.FECHA_INGRESO));
-	form.append('TIPO_FIGURA', datos.TIPO_FIGURA);
-	form.append('ESTUDIAS_ACTUALMENTE', datos.ESTUDIAS_ACTUALMENTE);
-	form.append('TIPO_ESTUDIO', datos.TIPO_ESTUDIO);
-	form.append('INSTITUCION_ESTUDIO', datos.INSTITUCION_ESTUDIO);
-	form.append('DISPOSITIVO_ACADEMICO', datos.DISPOSITIVO_ACADEMICO);
-	form.append('OPCION_EQUIPO', datos.OPCION_EQUIPO);
-	form.append('ACEPTO_CARACTERISTICAS', datos.ACEPTO_CARACTERISTICAS ? '1' : '0');
-	form.append('OPCION_PAGO', datos.OPCION_PAGO);
-	form.append('NECESITA_CONTACTO', datos.NECESITA_CONTACTO);
-
-	const { data: loginCredenciales } = await Http.post<LoginDatos>('/apps/form_conafe_services/accesstoken.php', {}, {
-		headers: {
-			Authorization: 'Basic RzqZldRR1dIYUdxR2Q6R2gxSlZaenRvbUJ2TjRPeg==R3FGT1Y3',
-		}
-	});
-
-	const { data } = await Http.post<any>('/apps/form_conafe_services/api_registro_formulario.php', form, {
-		headers: {
-			Authorization: `Bearer ${loginCredenciales.ACCESTOKEN}`
-		}
-	});
-
-	return res.status(200).json(data)
 }
