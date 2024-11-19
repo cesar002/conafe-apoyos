@@ -201,15 +201,16 @@ const Registro = (props: IRegistroPageProps) => {
 									</label>
 									<input type="text" id="numero_control" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required
 										value={numeroControl}
-										onChange={e => setNumeroControl(e.target.value)}
-										disabled={isSubmitting}
+										disabled
 									/>
-									<button className="p-3 lg:w-36 w-full h-10 bg-con-blue flex justify-center items-center text-white rounded-md mt-3"
-										disabled={consultando}
-										onClick={buscarUsuario}
+									<button className="p-3 lg:w-36 w-full h-10 bg-gray-400 flex justify-center items-center text-white rounded-md mt-3"
+										disabled
 									>
 										Buscar
 									</button>
+									<p className="mt-3 text-sm">
+										<span className="text-red-600">*</span> De momento el servicio no se encuentra disponible
+									</p>
 								</div>
 								{ consultando &&
 								<div className="flex justify-center items-center mt-10">
