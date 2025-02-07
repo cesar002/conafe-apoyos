@@ -1,5 +1,3 @@
-import { useRouter } from "next/router";
-
 import ApoyoTecnologicoSeccion from "@/components/moleculas/ApoyoTecnologicoSeccion";
 import CaracteristicasSeccion from "@/components/moleculas/CaracteristicasSeccion";
 import ComoAplicoSeccion from "@/components/moleculas/ComoAplicoSeccion";
@@ -8,8 +6,11 @@ import FortaleceSeccion from "@/components/moleculas/FortaleceSeccion";
 import GoogleSeccion from "@/components/moleculas/GoogleSeccion";
 import Header from "@/components/moleculas/Header";
 import PuedoSerCandidatoSeccion from "@/components/moleculas/PuedoSerCandidatoSeccion";
+import { useRouter } from "next/router";
+import { useTranslations } from "next-intl";
 
 const Home = () => {
+	const t = useTranslations();
 	const router = useRouter();
 
 	const irAlRegistro = () => {
@@ -23,13 +24,13 @@ const Home = () => {
 			<div className="bg-[url('/assets/kid.jpg')] bg-center bg-no-repeat bg-cover lg:min-h-[40rem] min-h-[30rem] w-full p-10 flex justify-end">
 				<div className="flex flex-col xl:w-1/2 w-full gap-y-5 lg:justify-items-start lg:items-start justify-center items-center">
 					<p className="text-white text-4xl lg:text-5xl font-bold lg:text-left text-center">
-						Fortalece tu formación
+						{ t('seccion_2.titulo') }
 					</p>
 					<p className="text-white text-3xl font-light lg:text-left text-center">
-						Potencia tus habilidades en la Relación Tutora y compleméntala con acceso a más recursos y capacitación.
+						{ t('seccion_2.parrafo_1') }
 					</p>
 					<p className="text-white text-3xl font-light lg:text-left text-center">
-						Queremos promover el seguimiento, la observación y tu práctica presencial y en línea.
+						{ t('seccion_2.parrafo_2') }
 					</p>
 				</div>
 			</div>
@@ -40,14 +41,14 @@ const Home = () => {
 			<section className="mt-10 mb-20 w-full bg-[#4C7DBA] p-10">
 				<div className="p-3">
 					<p className="text-white lg:text-3xl text-2xl lg:text-left text-center">
-						Se Convoca a Figuras Educativas del Consejo Nacional de Fomento Educativo que tengan interés en ser beneficiados con un apoyo adicional, correspondiente al 50% del costo de un equipo de cómputo.
+						{ t('seccion_7.titulo') }
 					</p>
 					<ul className="list-disc ml-10 text-white mt-5 text-xl">
 						<li>
-							Realiza tu registro de manera voluntaria.
+							{ t('seccion_7.parrafo_1') }
 						</li>
 						<li>
-							Podrás aplicar si eres figura educativa que presta su servicio social en el CONAFE (ECAR, ECA y EC)
+							{ t('seccion_7.parrafo_2') }
 						</li>
 					</ul>
 				</div>

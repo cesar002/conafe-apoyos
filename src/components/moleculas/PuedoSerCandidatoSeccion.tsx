@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 
 interface IPuedoSerCandidatoSeccionProps {
 	handleClick?(): void;
@@ -6,12 +7,13 @@ interface IPuedoSerCandidatoSeccionProps {
 const PuedoSerCandidatoSeccion = ({
 	handleClick
 }: IPuedoSerCandidatoSeccionProps) => {
+	const t = useTranslations();
 
 	return (
 		<div className="bg-primary min-h-[50rem] w-full flex flex-col pb-10 px-5 lg:px-0">
 			<div className="flex flex-col justify-center items-center gap-y-10">
 				<p className="text-gray-400 text-center lg:text-2xl text-xl font-semibold w-full">
-					Debido a que los recursos son limitados, será necesario aplicar criterios de prelación para la asignación de los apoyos adicionales, por lo que es muy importante que incorpores tus datos correctamente.
+					{ t('seccion_8.titulo') }
 				</p>
 			</div>
 			<div className="flex flex-col w-full lg:mt-24 mt-14 gap-y-5">
@@ -52,7 +54,7 @@ const PuedoSerCandidatoSeccion = ({
 								EC
 							</span>
 							<p className="text-white xl:text-base lg:text-sm md:text-base">
-							con una antigüedad de 2 años o más en la práctica educativa, que estén estudiando su bachillerato, licenciatura, especialización o maestría.
+								{ t('seccion_8.parrafo_3') }
 							</p>
 						</div>
 					</div>
@@ -68,7 +70,7 @@ const PuedoSerCandidatoSeccion = ({
 								EC
 							</span>
 							<p className="text-white text-base">
-							con una antigüedad de 2 años o más que no estén estudiando.
+								{ t('seccion_8.parrafo_4') }
 							</p>
 						</div>
 					</div>
@@ -84,7 +86,7 @@ const PuedoSerCandidatoSeccion = ({
 								EC
 							</span>
 							<p className="text-white text-base ml-5">
-							En general.
+								{ t('seccion_8.parrafo_5') }
 							</p>
 						</div>
 					</div>

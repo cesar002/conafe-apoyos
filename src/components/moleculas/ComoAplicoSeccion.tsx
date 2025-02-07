@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 interface IComoAplicoSeccionProps {
 	handleClick?(): void;
@@ -7,12 +8,13 @@ interface IComoAplicoSeccionProps {
 const ComoAplicoSeccion = ({
 	handleClick
 }: IComoAplicoSeccionProps) => {
+	const t = useTranslations();
 
 	return (
 		<div className="bg-con-primary min-h-[30rem] flex flex-col pb-20 lg:px-0 px-5">
 			<div className="flex justify-center items-center">
 				<p className="text-con-blue lg:text-5xl text-4xl font-bold lg:w-[50%] w-full text-center">
-					¿Cómo aplico para el apoyo?
+					{ t('seccion_6.titulo') }
 				</p>
 			</div>
 			<div className="grid xl:grid-cols-4 lg:grid-cols-2 grid-cols-1 gap-3 mt-16">
@@ -23,11 +25,11 @@ const ComoAplicoSeccion = ({
 						width={300}
 						height={300}
 					/>
-					<p className="text-center text-lg text-gray-500">
-						<span className="font-bold text-gray-600">Realiza tu registro en línea</span>, conforme a esta Convocatoria.
+					<p className="text-center text-lg text-gray-500 font-medium">
+						{ t('seccion_6.parrafo_1') }
 					</p>
-					<p className="text-xs text-center text-gray-500">
-						Asegúrate de registrar tus datos correctamente, ya que serán verificados y se tomarán para darte aviso sobre los siguientes procesos.
+					<p className="text-xs text-center text-gray-500 font-medium">
+						{ t('seccion_6.parrafo_2') }
 					</p>
 				</div>
 				<div className="flex flex-col justify-center items-center">
@@ -37,8 +39,8 @@ const ComoAplicoSeccion = ({
 						width={300}
 						height={300}
 					/>
-					<p className="text-center text-lg text-gray-500">
-						<span className="font-bold text-gray-500">Si eres beneficiado</span>, recibirás un correo electrónico
+					<p className="text-center text-lg text-gray-500 font-medium">
+						{ t('seccion_6.parrafo_3') }
 					</p>
 				</div>
 				<div className="flex flex-col justify-center items-center">
@@ -48,8 +50,8 @@ const ComoAplicoSeccion = ({
 						width={300}
 						height={300}
 					/>
-					<p className="text-center text-lg text-gray-500">
-						<span className="font-bold text-gray-500">Firma carta compromiso</span> desde tu App
+					<p className="text-center text-lg text-gray-500 font-medium">
+						{ t('seccion_6.parrafo_4') }
 					</p>
 				</div>
 				<div className="flex flex-col justify-center items-center">
@@ -59,8 +61,8 @@ const ComoAplicoSeccion = ({
 						width={300}
 						height={300}
 					/>
-					<p className="text-center text-lg text-gray-500">
-						<span className="font-bold text-gray-500">Permanece en la práctica educativa</span> durante el ciclo escolar 2024-2025
+					<p className="text-center text-lg text-gray-500 font-medium">
+						{ t('seccion_6.parrafo_5') }
 					</p>
 				</div>
 			</div>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 interface ICaracteristicasSeccionProps {
 	handleClick?(): void;
@@ -7,6 +8,7 @@ interface ICaracteristicasSeccionProps {
 const CaracteristicasSeccion = ({
 	handleClick
 }: ICaracteristicasSeccionProps) => {
+	const t = useTranslations();
 
 	return (
 		<div className="bg-con-primary min-h-[30rem] flex lg:flex-row flex-col lg:py-0 py-10">
@@ -23,23 +25,23 @@ const CaracteristicasSeccion = ({
 			<div className="lg:w-[60%] w-full flex flex-col justify-center items-start px-20 gap-y-10 mt-5 lg:mt-0">
 				<ul className="text-gray-400 lg:text-2xl text-xl font-semibold list-disc">
 					<li>
-						Modelo: HP 200 G9-edu /892R5LA#ABM
+						{ t('seccion_5.parrafo_1') }
 					</li>
 					<li>
-						Pantalla: LCD 14” HD
+						{ t('seccion_5.parrafo_2') }
 					</li>
 					<li>
-						Memoria RAM: 8 GB (1x(GB) DDR4 3200)
+						{ t('seccion_5.parrafo_3') }
 					</li>
 					<li>
-						Disco duro: SSD 512 GB
+						{ t('seccion_5.parrafo_4') }
 					</li>
 					<li>
-						Sistema operativo: Windows 11 Home, 64 bits
+						{ t('seccion_5.parrafo_5') }
 					</li>
 				</ul>
 				<span className="text-sm text-gray-500">
-					*SSD tienen velocidades más rápidas, mayor durabilidad y eficiencia que los HDD
+					{ t('seccion_5.parrafo_6') }
 				</span>
 			</div>
 		</div>

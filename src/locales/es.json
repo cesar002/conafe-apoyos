@@ -1,0 +1,61 @@
+{
+	"header": "Convocataria para el Fortalecimiento del Desempeño Académico y Profesional de las Figuras Educativas mediante un Apoyo Económico adicional para acceder a dispositivos Tecnológicos.",
+	"seccion_1": {
+		"titulo": "Impulsa tu desempeño académico",
+		"parrafo_1": "Desarrolla actividades que favorezcan el Modelo de Educación Comunitaria y la Relación Tutora.",
+		"parrafo_2": "Cuenta con más herramientas de búsqueda e investigación para el desarrollo de temas de interés."
+	},
+	"seccion_2": {
+		"titulo": "Fortalece tu formación",
+		"parrafo_1": "Potencia tus habilidades en la Relación Tutora y compleméntala con acceso a más recursos y capacitación.",
+      "parrafo_2": "Queremos promover el seguimiento, la observación y tu práctica presencial y en línea."
+	},
+	"seccion_3": {
+      "titulo": "Favorece la continuidad de tus estudios y tu profesionalización",
+      "parrafo_1": "Queremos que tengas todas las herramientas para seguir estudiando desde cualquier lugar.",
+      "parrafo_2": "Este apoyo representa un reconocimiento a tu dedicación y pasión, además de expresar gratitud por tu compromiso con la comunidad."
+   },
+	"seccion_4": {
+      "titulo": "¿En que consiste el apoyo tecnológico?",
+      "parrafo_1": "CONAFE te entregará un apoyo económico de $4,450.00 mxn y tú podrás complementar de manera diferida (máximo de 4 meses) para acceder a un equipo de cómputo de $8,900.00 mxn con las siguientes características:"
+   },
+	"seccion_5": {
+      "parrafo_1": "Modelo: HP 200 G9-edu /892R5LA#ABM",
+      "parrafo_2": "Pantalla: LCD 14” HD",
+		"parrafo_3": "Memoria RAM: 8 GB (1x(GB) DDR4 3200)",
+      "parrafo_4": "Disco duro: SSD 512 GB",
+		"parrafo_5": "Sistema operativo: Windows 11 Home, 64 bits",
+		"parrafo_6": "*SSD tienen velocidades más rápidas, mayor durabilidad y eficiencia que los HDD"
+   },
+	"seccion_6": {
+		"titulo": "¿Cómo aplico para el apoyo?",
+		"parrafo_1": "Realiza tu registro en línea, conforme a esta Convocatoria.",
+      "parrafo_2": "Asegúrate de registrar tus datos correctamente, ya que serán verificados y se tomarán para darte aviso sobre los siguientes procesos.",
+      "parrafo_3": "Si eres beneficiado, recibirás un correo electrónico",
+      "parrafo_4": "Firma carta compromiso desde tu App",
+      "parrafo_5": "Permanece en la práctica educativa durante el ciclo escolar 2024-2025"
+	},
+	"seccion_7": {
+		"titulo": "Se Convoca a Figuras Educativas del Consejo Nacional de Fomento Educativo que tengan interés en ser beneficiados con un apoyo adicional, correspondiente al 50% del costo de un equipo de cómputo.",
+		"parrafo_1": "Realiza tu registro de manera voluntaria.",
+      "parrafo_2": "Podrás aplicar si eres figura educativa que presta su servicio social en el CONAFE (ECAR, ECA y EC)"
+	},
+	"seccion_8": {
+		"titulo": "Debido a que los recursos son limitados, será necesario aplicar criterios de prelación para la asignación de los apoyos adicionales, por lo que es muy importante que incorpores tus datos correctamente.",
+		"parrafo_1": "ECAR",
+      "parrafo_2": "ECA",
+      "parrafo_3": "con una antigüedad de 2 años o más en la práctica educativa, que estén estudiando su bachillerato, licenciatura, especialización o maestría.",
+      "parrafo_4": "con una antigüedad de 2 años o más que no estén estudiando.",
+		"parrafo_5": "En general."
+	},
+	"seccion_9": {
+      "titulo": "Además incluye"
+   },
+	"seccion_10": {
+		"titulo": "Y certificación como Google Educator",
+		"parrafo_1": "Curso en línea para certificarte como Google Educator.",
+      "parrafo_2": "Examen de simulación para la certificación online.",
+      "parrafo_3": "Pase para certificarte con Google como Educador Google nivel 1."
+   },
+	"registrate": "Regístrate aquí"
+}

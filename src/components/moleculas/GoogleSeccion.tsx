@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 interface IGoogleSeccionProps {
 	handleClick?(): void
@@ -9,15 +10,16 @@ const GoogleSeccion = ({
 }: IGoogleSeccionProps) => {
 	//Para tus actividades academicas ¿utilizas algún dispositivo electronico?
 	//¿Que dispositivo utilizas mas para tus actividades academicas
+
+	const t = useTranslations();
+
 	return (
 		<>
 		<div className="bg-[url('/assets/3Asset_26foto-BIEN.jpg')] lg:min-h-[50rem] min-h-[20rem] bg-cover bg-no-repeat flex lg:flex-row flex-col lg:p-20 p-10">
-			<div className="lg:w-1/2 w-full flex justify-center lg:mb-0 mb-10">
+			<div className="lg:w-1/2 w-full flex flex-col gap-16 items-center lg:mb-0 mb-10">
 				<p className="text-white font-bold lg:text-6xl text-4xl">
-					Además incluye
+					{ t('seccion_9.titulo') }
 				</p>
-			</div>
-			<div className="lg:w-1/2 w-full flex flex-col gap-y-10 justify-center items-center">
 				<Image
 					src="/assets/4Asset_22google-blanco.svg"
 					alt="Google Suit"
@@ -45,17 +47,14 @@ const GoogleSeccion = ({
 				</div>
 				<div className="lg:w-1/2 w-full relative lg:mt-0 mt-14">
 					<p className="text-gray-500 font-bold lg:text-5xl text-4xl text-center lg:text-left">
-						Y certificación como  Google Educator
+						{ t('seccion_10.parrafo_1') }
 					</p>
 					<ul className="list-disc lg:text-2xl text-lg text-gray-500 mt-10 lg:w-1/2 w-full flex flex-col justify-center lg:items-start items-center px-10">
 						<li>
-							<strong>Curso en línea</strong> para certificarte como Google Educator.
+							{ t('seccion_10.parrafo_2') }
 						</li>
 						<li>
-							Examen de <strong>simulación para la certificación</strong> online.
-						</li>
-						<li>
-							<strong>Pase</strong> para certificarte con Google como Educador Google nivel 1.
+							{ t('seccion_10.parrafo_3') }
 						</li>
 					</ul>
 
@@ -73,7 +72,7 @@ const GoogleSeccion = ({
 				<button className="bg-con-blue text-white font-medium text-lg lg:w-1/5 w-[80%] uppercase py-5 rounded-full lg:mt-20"
 					onClick={handleClick}
 				>
-					Regístrate aquí
+					{ t('registrate') }
 				</button>
 			</div>
 		</div>
