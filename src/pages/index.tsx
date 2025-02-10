@@ -27,7 +27,7 @@ const Home = () => {
 				</div>
 				<div className="flex flex-col xl:w-1/2 w-full gap-y-5 lg:justify-items-start lg:items-start justify-center items-center">
 					<p className="text-white text-4xl lg:text-5xl font-bold lg:text-left text-center">
-						{ t('seccion_2.titulo') }asdasd
+						{ t('seccion_2.titulo') }
 					</p>
 					<p className="text-white text-3xl font-light lg:text-left text-center">
 						{ t('seccion_2.parrafo_1') }
