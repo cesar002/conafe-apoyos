@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { useTranslations } from "next-intl";
 
 interface IGoogleSeccionProps {
@@ -12,6 +13,7 @@ const GoogleSeccion = ({
 	//¿Que dispositivo utilizas mas para tus actividades academicas
 
 	const t = useTranslations();
+	const { locale } = useRouter();
 
 	return (
 		<>
@@ -26,12 +28,22 @@ const GoogleSeccion = ({
 					width={600}
 					height={100}
 				/>
+				{ locale == 'en' &&
+				<Image
+					src="/assets/google_workspace.png"
+					alt="Google Suit"
+					width={600}
+					height={100}
+				/>
+				}
+				{ locale == 'es' &&
 				<Image
 					src="/assets/08-Asset_16logosGGL.svg"
 					alt="Google Suit"
 					width={600}
 					height={100}
 				/>
+				}
 			</div>
 		</div>
 		<div className="lg:mt-[13rem] mt-[3rem] flex flex-col py-10 bg-con-primary">
