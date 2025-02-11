@@ -12,7 +12,7 @@ const FavoreceSeccion = () => {
 				{ locale == 'en' &&
 				<h2 className="text-white text-4xl lg:text-5xl font-bold text-left">
 					BRIDGE <br/>
-					Bridging Digital Divides: National Initiative for Educational Technology Access in Rural Mexico
+					Bridging Digital Divides: National Initiative for Educational Technology Access in Rural Mexico.
 				</h2>
 				}
 
